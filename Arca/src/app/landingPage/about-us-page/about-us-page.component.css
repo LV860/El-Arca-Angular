@@ -1,0 +1,103 @@
+/*------------------------------------------- Introduction ------------------------------------------*/
+.section_horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+  
+  .text h2 {
+    text-align: center;
+    font-family: "Red Hat Display", Helvetica, Arial, serif;
+    font-weight: 700;
+    color: #2e0e73ff;
+    font-size: 40px;
+  }
+  
+  .text p {
+    text-align: center;
+    font-family: "Manrope", Helvetica, Arial, serif;
+    font-weight: 500;
+    color: #171a1fff;
+    font-size: 20px;
+  }
+  
+  .text button {
+    margin-top: 20px;
+  }
+  
+  .mission-vision-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  
+  .mission-vision-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    background-color: #fffade;
+    border: 2px solid #d3d3d3;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+  }
+  
+  .mission,
+  .vision {
+    width: 48%;
+    padding: 10px;
+  }
+  
+  .mission h3,
+  .vision h3 {
+    text-align: center;
+    font-family: "Red Hat Display", Helvetica, Arial, serif;
+    font-weight: 700;
+    color: #2e0e73ff;
+  }
+  
+  .vision h3 {
+    color: #a42315;
+  }
+  
+  .mission p,
+  .vision p {
+    text-align: center;
+    font-family: Manrope, Helvetica, Arial, serif;
+    color: #171a1fff;
+  }
+  
+  /* Línea divisoria */
+  .mission-vision-container {
+    position: relative;
+  }
+  
+  .mission-vision-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #d3d3d3;
+    transform: translateX(-50%);
+  }
+  
+  .text .btnYellow {
+    font-size: 20px;
+  }
+  

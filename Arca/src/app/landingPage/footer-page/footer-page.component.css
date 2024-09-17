@@ -1,0 +1,119 @@
+/*------------------------------------------- Footer ------------------------------------------*/
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px 10px 100px;
+    background-color: rgb(46, 14, 115);
+    bottom: 0;
+    font-family: "Manrope", Helvetica, Arial, serif;
+  }
+  
+  .copyright {
+    width: 35%;
+    justify-content: space-between;
+    color: white;
+  }
+  
+  .FooterLogo img {
+    border-radius: 36px;
+  }
+  
+  .FooterLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    width: 30%;
+    flex-grow: 5;
+  }
+  
+  .FooterLogo h1 {
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+  }
+  
+  .FooterLogo a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .FooterOptions {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 5;
+    width: 30%;
+  }
+  .FooterOptions ul {
+    font-family: "Manrope", sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+  .FooterLogo a:visited {
+    color: rgb(255, 255, 255);
+  }
+  
+  .FooterOptionsList a {
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+  }
+  
+  #redes {
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: right;
+  }
+  
+  #redes a {
+    text-decoration: none;
+    padding: 20px;
+  }
+  
+  .FooterOptionsList a:visited {
+    color: white;
+  }
+  
+  /*------------------------------------------- TAGS DE ESTADOS ------------------------------------------*/
+  .tagEstadoPerfilActivo {
+    color: #117b34ff;
+    padding: 0.2em 0.6em; /* Adjust padding to make the tag smaller */
+    border-radius: 10rem;
+    background-color: #abf8c4;
+    border: none; /* Remove default button border */
+  }
+  
+  .tagEstadoPerfilInactivo {
+    color: #896901;
+    padding: 0.2em 0.6em; /* Adjust padding to make the tag smaller */
+    border-radius: 10rem;
+    background-color: #fffae8;
+    border: none; /* Remove default button border */
+  }
+  
+  .tagEstadoMascotaTratamiento {
+    color: #117b34ff;
+    padding: 0.2em 0.6em;
+    border-radius: 10rem;
+    background-color: #abf8c4;
+    border: none; /* Remove default button border */
+  }
+  
+  .tagEstadoMascotaInactiva {
+    color: #896901;
+    padding: 0.2em 0.6em;
+    border-radius: 10rem;
+    background-color: #fffae8;
+  }
+  

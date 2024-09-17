@@ -1,0 +1,134 @@
+.card-title {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .card-text {
+    font-family: "Manrope", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+  
+  .bigImagesCardsSection {
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .solicitaCitaCard {
+    justify-content: center;
+    background-color: #7085beff;
+    display: flex;
+    color: white;
+    width: 100%; /* Ensure the container takes up full width */
+    margin-bottom: 55px;
+  }
+  
+  .solicitaCitaCard img {
+    width: auto;
+    height: 250px;
+    padding-right: 120px;
+  }
+  
+  .cardImageTitle {
+    font-family: "Manrope", sans-serif;
+    font-size: 40px;
+    margin-bottom: 8px;
+    text-align: left; /* Ensure text is aligned to the left */
+    margin-left: 55px;
+    margin-top: 40px;
+    margin-right: auto; /* Pushes the text to the leftmost side */
+  }
+  .threeCardsEven {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Ensures no space on the sides of the outer cards */
+    margin-bottom: 100px;
+  }
+  
+  .threeCardsEven img {
+    width: auto;
+    height: 302px;
+  }
+  
+  #cardConsultaEnLinea,
+  #cardConsultasTratamientos,
+  #cardEmergencias {
+    width: 405px;
+    height: 445px;
+    display: flex; /* Ensure that flexbox is used */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-end; /* Pushes the content to the bottom */
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .cardImageTitleThree {
+    color: #16191ed2;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 20px;
+    width: 69%;
+    font-family: "Manrope", sans-serif;
+    margin-right: auto !important;
+    margin-bottom: auto; /* Pushes the text to the top */
+  }
+  
+  #cardConsultaEnLinea {
+    background-color: #9e87baff;
+  }
+  
+  #cardConsultasTratamientos {
+    background-color: #fffadeff;
+    margin: 0 16px; /* Adds space on both sides of the center card */
+  }
+  
+  #cardEmergencias {
+    background-color: #e8d5b5ff;
+  }
+  .gridCardsSection {
+    width: 80%; /* Ensure the container takes up full width */
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; /* Center the container within its parent */
+    margin-bottom: 150px;
+  }
+  
+  .gridCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 40px;
+    padding: 0; /* Remove padding to align directly with the border */
+    width: 100%; /* Ensure the grid takes up the full width of the container */
+    box-sizing: border-box; /* Ensure padding and borders are included in the width */
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0px;
+    border-top: 2px solid #f2ba02;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #f2f3f4;
+  }
+  
+  .card-title {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #16191ed2;
+  }
+  
+  .card-text {
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #16191ed2;
+  }
+  
+  .hidden-link {
+    color: inherit; /* Hereda el color del texto circundante */
+    text-decoration: none; /* Elimina el subrayado */
+    background: none; /* Elimina cualquier fondo */
+  }

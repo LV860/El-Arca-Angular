@@ -1,0 +1,69 @@
+/*------------------------------------------- Introduction ------------------------------------------*/
+.informacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+  
+  .text h2 {
+    text-align: center;
+    font-family: "Red Hat Display", Helvetica, Arial, serif;
+    font-weight: 700;
+    color: #2e0e73ff;
+    font-size: 40px;
+  }
+  
+  .text p {
+    text-align: center;
+    font-family: "Manrope", Helvetica, Arial, serif;
+    font-weight: 500;
+    color: #171a1fff;
+    font-size: 20px;
+  }
+  
+  
+  
+  .dogImageFigure {
+    width: 500px;
+    height: 500px;
+    border-radius: 300px;
+    object-fit: cover;
+    margin-left: 10px;
+  }
+  
+  /*------------------------------------------- Mapa ------------------------------------------*/
+  
+  .mapa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mapa h2 {
+    text-align: center;
+    font-family: "Red Hat Display", Helvetica, Arial, serif;
+    font-weight: 700;
+    color: #2e0e73ff;
+    font-size: 40px;
+  }
+  
+  
+  .frame-mapa {
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(244, 188, 3, 0.425); /* Sombra opcional */
+    margin-bottom: 40px;
+  }
+  
+  

@@ -1,0 +1,195 @@
+/*------------------------------------------- Todo ------------------------------------------*/
+.subtitle {
+    font-family: "Red Hat Display", Helvetica, Arial, serif;
+    color: #2e0e73;
+  }
+  
+  .paragraph {
+    font-family: Manrope, Helvetica, Arial, serif;
+    color: #323743;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  /*------------------------------------------- Introduction ------------------------------------------*/
+  .section_horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+  
+  .text h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  
+  .text button {
+    margin-top: 20px;
+  }
+  
+  .text .btnYellow {
+    font-size: 18px;
+  }
+  
+  /*------------------------------------------- Video ------------------------------------------*/
+  
+  .video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16 / 9; /* Relación de aspecto 16:9 */
+    overflow: hidden;
+    border-radius: 20px; /* Esquinas curvas */
+    margin-top: 70px;
+    box-shadow: 0 4px 8px rgba(244, 188, 3, 0.425); /* Sombra opcional */
+    margin-bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px; /* Esquinas curvas del iframe */
+  }
+  
+  /*------------------------------------------- Servicios ------------------------------------------*/
+  
+  .services {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 65%;
+    margin: 0 auto;
+  }
+  
+  .services .btnPurple {
+    font-size: 15px;
+  }
+  
+  .Grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); /* Ajusta el número de columnas según el tamaño disponible */
+    grid-gap: 20px; /* Espacio entre los elementos de la grid */
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto; /* Centra la grid horizontalmente */
+    margin-left: 150px;
+  }
+  
+  #title {
+    font-family: "Red Hat Display", Helvetica, Arial, serif;
+    font-size: 35px;
+    color: #171a1f;
+    margin-bottom: 20px; /* Espacio debajo del título */
+  }
+  
+  .GridItem {
+    padding: 20px; /* Espacio interior del GridItem */
+    border-radius: 4px; /* border-m */
+    border-width: 2px;
+    border-color: rgb(242, 186, 3); /* secondary-500 */
+    border-style: solid;
+  }
+  
+  /*------------------------------------------- Horarios ------------------------------------------*/
+  
+  .Schedule {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #613b87; /* Color de fondo similar al de la imagen */
+    padding: 20px;
+    border-radius: 30px; /* Para darle un borde redondeado */
+    margin-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .Schedule .btnBlue {
+    font-size: 18px;
+  }
+  
+  .figures1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25%;
+  }
+  
+  .figures2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+  }
+  
+  .figures1 img,
+  .figures2 img {
+    margin: 10px;
+  }
+  
+  .text2 {
+    width: 35%;
+    text-align: center;
+    color: white; /* Color del texto */
+  }
+  
+  .text2 h1 {
+    font-family: "Red Hat Display", Helvetica, Arial, serif;
+    font-size: 35px;
+    margin: 10px 0;
+  }
+  
+  .text2 p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  #ballYellow {
+    width: 70px; /* Ajusta el tamaño según sea necesario */
+    height: 70px; /* Ajusta el tamaño según sea necesario */
+  }
+  
+  #ballYellow {
+    transform: scale(1.05); /* Aumenta el tamaño en 1.5 veces */
+  }
+  
+  #ballBlue1 {
+    width: 110px; /* Ajusta el tamaño según sea necesario */
+    height: 110px; /* Ajusta el tamaño según sea necesario */
+  }
+  
+  #ballBlue1 {
+    transform: scale(1.1); /* Aumenta el tamaño en 2 veces */
+  }
+  
+  #ballYellow {
+    margin-bottom: 100px;
+  }
+  
+  #ballBlu2 {
+    margin-left: 100px;
+  }
+  
+  
+  
