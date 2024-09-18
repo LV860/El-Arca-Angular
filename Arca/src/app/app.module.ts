@@ -10,6 +10,8 @@ import { FooterPageComponent } from './landingPage/footer-page/footer-page.compo
 import { LocationPageComponent } from './landingPage/location-page/location-page.component';
 import { AboutUsPageComponent } from './landingPage/about-us-page/about-us-page.component';
 import { ContactPageComponent } from './landingPage/contact-page/contact-page.component';
+import { InicioClienteComponent } from './landingPage/inicio-cliente/inicio-cliente.component';
+import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/inicio-veterinario.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ContactPageComponent } from './landingPage/contact-page/contact-page.co
     FooterPageComponent,
     LocationPageComponent,
     AboutUsPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    InicioClienteComponent,
+    InicioVeterinarioComponent
   ],
   imports: [
     BrowserModule,
