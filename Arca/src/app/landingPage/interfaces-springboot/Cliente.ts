@@ -1,4 +1,4 @@
-import { Mascota } from "./mascota";
+import { Mascota } from "./Mascota";
 
 export interface Cliente{
     correo: string;

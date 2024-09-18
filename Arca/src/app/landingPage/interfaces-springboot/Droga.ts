@@ -1,4 +1,4 @@
-import { Tratamiento } from "./tratamiento";
+import { Tratamiento } from "./Tratamiento";
 
 export interface Droga{
     nombre: string;
