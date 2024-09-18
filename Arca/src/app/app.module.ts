@@ -10,8 +10,8 @@ import { FooterPageComponent } from './landingPage/footer-page/footer-page.compo
 import { LocationPageComponent } from './landingPage/location-page/location-page.component';
 import { AboutUsPageComponent } from './landingPage/about-us-page/about-us-page.component';
 import { ContactPageComponent } from './landingPage/contact-page/contact-page.component';
-import { MascotasTableComponent } from './Veterinario/mascotas-table/mascotas-table.component';
-import { HeaderVeterinarioComponent } from './Veterinario/header-veterinario/header-veterinario.component';
+import { InicioClienteComponent } from './landingPage/inicio-cliente/inicio-cliente.component';
+import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/inicio-veterinario.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { HeaderVeterinarioComponent } from './Veterinario/header-veterinario/hea
     LocationPageComponent,
     AboutUsPageComponent,
     ContactPageComponent,
-    MascotasTableComponent,
-    HeaderVeterinarioComponent
+    InicioClienteComponent,
+    InicioVeterinarioComponent
   ],
   imports: [
     BrowserModule,
