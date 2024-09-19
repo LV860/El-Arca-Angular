@@ -1,58 +1,44 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/tabla_Mascotas.css" />
-
-    <title>Mascotas</title>
-  </head>
-  <body>
-    <app-header-page></app-header-page>
-
-    <main>
-      <section class="client-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Raza</th>
-              <th>Edad</th>
-              <th>Peso</th>
-              <th>Enfermedad</th>
-              <th>Foto</th>
-              <th>Estado</th>
-              <th>Acción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let mascota of mascotasList">
-              <td>{{ mascota.nombre }}</td>
-              <td>{{ mascota.raza }}</td>
-              <td>{{ mascota.edad }}</td>
-              <td>{{ mascota.peso }}</td>
-              <td>{{ mascota.enfermedad }}</td>
-              <td>
-                <img src="{{ mascota.urlImagen }}" alt="Imagen de Mascota" />
-              </td>
-              <td>{{ mascota.estado }}</td>
-              <td>
-                <button type="button" class="btn btn-warning">Editar</button>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-  </body>
-</html>
+<main>
+  <section class="title-bar">
+    <h1>Información Mascotas</h1>
+    <div class="buttons-group">
+      <a routerLink="/mascotasAdd">
+        <button class="btnAzul">Añadir Mascota</button>
+      </a>
+      <!-- Los botones para editar y eliminar clientes se pueden gestionar aquí -->
+    </div>
+  </section>
+  <section class="client-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Raza</th>
+          <th>Edad</th>
+          <th>Peso</th>
+          <th>Enfermedad</th>
+          <th>Foto</th>
+          <th>Estado</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mascota of mascotasList">
+          <td>{{ mascota.nombre }}</td>
+          <td>{{ mascota.raza }}</td>
+          <td>{{ mascota.edad }}</td>
+          <td>{{ mascota.peso }}</td>
+          <td>{{ mascota.enfermedad }}</td>
+          <td>
+            <img src="{{ mascota.urlImagen }}" alt="Imagen de Mascota" />
+          </td>
+          <td>{{ mascota.estado }}</td>
+          <td>
+            <button type="button" class="btn btn-warning">Editar</button>
+            <button type="button" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>

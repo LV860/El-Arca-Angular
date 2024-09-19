@@ -6,10 +6,10 @@ import { ContactPageComponent } from './landingPage/contact-page/contact-page.co
 import { ServicesPageComponent } from './landingPage/services-page/services-page.component';
 import { LocationPageComponent } from './landingPage/location-page/location-page.component';
 import { MascotasTableComponent } from './Veterinario/mascotas-table/mascotas-table.component';
+import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.component';
+import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-detail.component';
 import { InicioClienteComponent } from './landingPage/inicio-cliente/inicio-cliente.component';
 import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/inicio-veterinario.component';
-
-
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,12 +18,14 @@ const routes: Routes = [
   { path: 'location', component: LocationPageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'mascotas', component: MascotasTableComponent },
+  { path: 'mascotasAdd', component: MascotasAddComponent },
+  { path: 'mascotasDetail/:id', component: MascotasDetailComponent },
   { path: 'loginCliente', component: InicioClienteComponent },
-  { path: 'loginVeterinario', component: InicioVeterinarioComponent }
+  { path: 'loginVeterinario', component: InicioVeterinarioComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

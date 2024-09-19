@@ -10,6 +10,7 @@ export class MascotasTableComponent {
   //Base de datos quemada de mascotas
   mascotasList: Mascota[] = [
     {
+      id: 1,
       nombre: 'Luna',
       raza: 'Golden Retriever',
       edad: 5,
@@ -20,6 +21,7 @@ export class MascotasTableComponent {
       estado: 'saludable',
     },
     {
+      id: 2,
       nombre: 'Max',
       raza: 'Poodle',
       edad: 3,
@@ -30,6 +32,7 @@ export class MascotasTableComponent {
       enfermedad: 'alergias',
     },
     {
+      id: 3,
       nombre: 'Bella',
       raza: 'Chihuahua',
       edad: 2,
@@ -40,6 +43,7 @@ export class MascotasTableComponent {
       estado: 'en tratamiento',
     },
     {
+      id: 4,
       nombre: 'Rocky',
       raza: 'Bulldog',
       edad: 4,
@@ -50,6 +54,7 @@ export class MascotasTableComponent {
       enfermedad: 'muerte',
     },
     {
+      id: 5,
       nombre: 'Nala',
       raza: 'Persa',
       edad: 3,
@@ -60,6 +65,7 @@ export class MascotasTableComponent {
       enfermedad: 'paralisis',
     },
     {
+      id: 6,
       nombre: 'Toby',
       raza: 'Beagle',
       edad: 7,
@@ -70,6 +76,7 @@ export class MascotasTableComponent {
       enfermedad: 'artritis',
     },
     {
+      id: 7,
       nombre: 'Simba',
       raza: 'Bengal',
       edad: 5,
@@ -80,6 +87,7 @@ export class MascotasTableComponent {
       enfermedad: 'eplipsia',
     },
     {
+      id: 8,
       nombre: 'Coco',
       raza: 'Shih Tzu',
       edad: 1,
@@ -90,6 +98,7 @@ export class MascotasTableComponent {
       enfermedad: 'alergias',
     },
     {
+      id: 9,
       nombre: 'Molly',
       raza: 'Dachshund',
       edad: 6,
@@ -100,6 +109,7 @@ export class MascotasTableComponent {
       estado: 'en tratamiento',
     },
     {
+      id: 10,
       nombre: 'Oliver',
       raza: 'Siamese',
       edad: 4,
@@ -110,4 +120,15 @@ export class MascotasTableComponent {
       enfermedad: 'pulmonitis',
     },
   ];
+
+  //metodos
+  //mostrarMascotas(mascota: Mascota){
+  //this.selectedMascota = mascota;
+  //}
+
+  //Se llama cuando se emite un evento desde el hijo
+  agregarMascota(mascota: Mascota) {
+    this.mascotasList.push(mascota);
+  }
+  
 }

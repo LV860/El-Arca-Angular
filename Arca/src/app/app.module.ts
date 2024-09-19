@@ -14,6 +14,8 @@ import { MascotasTableComponent } from './Veterinario/mascotas-table/mascotas-ta
 import { HeaderVeterinarioComponent } from './Veterinario/header-veterinario/header-veterinario.component';
 import { InicioClienteComponent } from './landingPage/inicio-cliente/inicio-cliente.component';
 import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/inicio-veterinario.component';
+import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-detail.component';
+import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/ini
     HeaderVeterinarioComponent,
     InicioClienteComponent,
     InicioVeterinarioComponent,
+    MascotasDetailComponent,
+    MascotasAddComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
