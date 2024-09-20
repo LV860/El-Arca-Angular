@@ -16,6 +16,7 @@ import { InicioClienteComponent } from './landingPage/inicio-cliente/inicio-clie
 import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/inicio-veterinario.component';
 import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-detail.component';
 import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.co
     MascotasDetailComponent,
     MascotasAddComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

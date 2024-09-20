@@ -34,11 +34,18 @@
           </td>
           <td>{{ mascota.estado }}</td>
           <td>
-            <button type="button" class="btn btn-warning">Editar</button>
+            <button
+              type="button"
+              (click)="mostrarMascota(mascota)"
+              class="btn btn-warning"
+            >
+              Editar
+            </button>
             <button type="button" class="btn btn-danger">Eliminar</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <app-mascotas-add (addMascotaEvent)="agregarMascota($event)"></app-mascotas-add>
   </section>
 </main>

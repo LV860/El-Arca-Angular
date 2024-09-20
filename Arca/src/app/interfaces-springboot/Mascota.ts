@@ -10,5 +10,5 @@ export interface Mascota{
     urlImagen?: string;
     cedulaDuenho: number;
     estado: string;
-    cliente?: Cliente;
+    //cliente?: Cliente;
 }

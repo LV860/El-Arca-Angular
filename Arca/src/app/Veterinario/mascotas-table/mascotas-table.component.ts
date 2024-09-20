@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { Mascota } from 'src/app/interfaces-springboot/Mascota';
 
 @Component({
@@ -7,6 +8,10 @@ import { Mascota } from 'src/app/interfaces-springboot/Mascota';
   styleUrls: ['./mascotas-table.component.css'],
 })
 export class MascotasTableComponent {
+
+  //atributos
+  selectedMascota!: Mascota;
+
   //Base de datos quemada de mascotas
   mascotasList: Mascota[] = [
     {
@@ -122,13 +127,21 @@ export class MascotasTableComponent {
   ];
 
   //metodos
-  //mostrarMascotas(mascota: Mascota){
-  //this.selectedMascota = mascota;
-  //}
+  // Inject Router in the constructor
+constructor(private router: Router) {}
+
+mostrarMascota(mascota: Mascota) {
+  const navigationExtras: NavigationExtras = {
+    state: {
+      mascota: mascota
+    }
+  };
+  this.router.navigate(['mascotasDetail'], navigationExtras);
+}
 
   //Se llama cuando se emite un evento desde el hijo
   agregarMascota(mascota: Mascota) {
     this.mascotasList.push(mascota);
   }
-  
+
 }
