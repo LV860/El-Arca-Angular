@@ -83,14 +83,16 @@
           />
         </div>
         <div class="form-group">
-          <label for="enfermedad">Estado:</label>
-          <select name="estado" id="estado" class="form-control">
+          <label for="estado">Estado:</label>
+          <select name="estado" id="estado" class="form-control" [(ngModel)]="formMascota.estado">
             <option value="En tratamiento">En tratamiento</option>
             <option value="Inactiva">Inactiva</option>
           </select>
         </div>
       </div>
-      <button type="submit" (click)="updateMascota()" class="btnSubmit">Guardar Cambios</button>
+      <button type="submit" (click)="updateMascota()" class="btnSubmit">
+        Guardar Cambios
+      </button>
     </form>
   </div>
 </main>

@@ -17,7 +17,7 @@ export class MascotaService {
       enfermedad: 'displasia de cadera',
       urlImagen: 'https://example.com/luna.jpg',
       cedulaDuenho: 1010101010,
-      estado: 'saludable',
+      estado: 'Inactiva',
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export class MascotaService {
       peso: 8,
       urlImagen: 'https://example.com/max.jpg',
       cedulaDuenho: 2020202020,
-      estado: 'en tratamiento',
+      estado: 'En tratamiento',
       enfermedad: 'alergias',
     },
     {
@@ -39,7 +39,7 @@ export class MascotaService {
       enfermedad: 'asma',
       urlImagen: 'https://example.com/bella.jpg',
       cedulaDuenho: 3030303030,
-      estado: 'en tratamiento',
+      estado: 'En tratamiento',
     },
     {
       id: 4,
@@ -49,7 +49,7 @@ export class MascotaService {
       peso: 25,
       urlImagen: 'https://example.com/rocky.jpg',
       cedulaDuenho: 4040404040,
-      estado: 'saludable',
+      estado: 'Inactiva',
       enfermedad: 'muerte',
     },
     {
@@ -60,7 +60,7 @@ export class MascotaService {
       peso: 4,
       urlImagen: 'https://example.com/nala.jpg',
       cedulaDuenho: 5050505050,
-      estado: 'saludable',
+      estado: 'Inactiva',
       enfermedad: 'paralisis',
     },
     {
@@ -71,7 +71,7 @@ export class MascotaService {
       peso: 18,
       urlImagen: 'https://example.com/toby.jpg',
       cedulaDuenho: 6060606060,
-      estado: 'en tratamiento',
+      estado: 'En tratamiento',
       enfermedad: 'artritis',
     },
     {
@@ -82,7 +82,7 @@ export class MascotaService {
       peso: 6,
       urlImagen: 'https://example.com/simba.jpg',
       cedulaDuenho: 7070707070,
-      estado: 'saludable',
+      estado: 'Inactiva',
       enfermedad: 'eplipsia',
     },
     {
@@ -93,7 +93,7 @@ export class MascotaService {
       peso: 5,
       urlImagen: 'https://example.com/coco.jpg',
       cedulaDuenho: 8080808080,
-      estado: 'saludable',
+      estado: 'Inactiva',
       enfermedad: 'alergias',
     },
     {
@@ -105,7 +105,7 @@ export class MascotaService {
       enfermedad: 'diabetes',
       urlImagen: 'https://example.com/molly.jpg',
       cedulaDuenho: 9090909090,
-      estado: 'en tratamiento',
+      estado: 'En tratamiento',
     },
     {
       id: 10,
@@ -115,7 +115,7 @@ export class MascotaService {
       peso: 4.5,
       urlImagen: 'https://example.com/oliver.jpg',
       cedulaDuenho: 1011121314,
-      estado: 'saludable',
+      estado: 'Inactiva',
       enfermedad: 'pulmonitis',
     },
   ];
@@ -126,6 +126,7 @@ export class MascotaService {
   }
 
   addMascota(mascota: Mascota) {
+    mascota.id = this.generateUniqueId();
     this.mascotasList.push(mascota);
     this.mascotasSubject.next(this.mascotasList);
   }
@@ -146,6 +147,12 @@ export class MascotaService {
       this.mascotasList[index] = updatedMascota;
       this.mascotasSubject.next(this.mascotasList);
     }
+  }
+
+  private generateUniqueId(): number {
+    return this.mascotasList.length > 0
+      ? Math.max(...this.mascotasList.map(m => m.id)) + 1
+      : 1;
   }
 
 }
