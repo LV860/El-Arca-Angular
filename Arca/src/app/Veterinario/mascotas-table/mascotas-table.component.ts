@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Mascota } from 'src/app/interfaces-springboot/Mascota';
-import { MascotaService } from 'src/app/services/mascotaService';
+import { MascotaService } from 'src/app/service/mascota.service';
 
 @Component({
   selector: 'app-mascotas-table',
@@ -9,23 +9,27 @@ import { MascotaService } from 'src/app/services/mascotaService';
   styleUrls: ['./mascotas-table.component.css'],
 })
 export class MascotasTableComponent implements OnInit {
+
+  //ATRIBUTOS
   selectedMascota!: Mascota;
+  //BD QUEMADA
   mascotasList: Mascota[] = [];
 
+  //INYECTAR DEPENDENCIAS
   constructor(private router: Router, private mascotaService: MascotaService) {}
 
-  ngOnInit() {
-    this.mascotaService.getMascotas().subscribe((mascotas) => {
-      this.mascotasList = mascotas;
-    });
-  }
-
-  mostrarMascota(mascota: Mascota) {
-    const navigationExtras = {
-      state: {
-        mascota: mascota
-      }
+  ngOnInit(): void {
+    this.mascotasList=this.mascotaService.findAll();
     };
-    this.router.navigate(['mascotasDetail'], navigationExtras);
-  }
+
+
+    mostrarMascota(id: number) {
+      this.router.navigate(['mascotasDetail', id]);
+    }
+
+    eliminarMascota(mascota: Mascota) {
+      var index = this.mascotasList.indexOf(mascota);
+      this.mascotasList.splice(index, 1);
+    }
+
 }

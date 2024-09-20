@@ -10,7 +10,7 @@
             type="text"
             id="nombre"
             name="nombre"
-            [(ngModel)]="mascota.nombre"
+            [(ngModel)]="formMascota.nombre"
             required
           />
         </div>
@@ -20,7 +20,7 @@
             type="text"
             id="id"
             name="id"
-            [(ngModel)]="mascota.id"
+            [(ngModel)]="formMascota.id"
             readonly
           />
         </div>
@@ -32,7 +32,7 @@
             type="text"
             id="raza"
             name="raza"
-            [(ngModel)]="mascota.raza"
+            [(ngModel)]="formMascota.raza"
             readonly
           />
         </div>
@@ -42,7 +42,7 @@
             type="number"
             id="edad"
             name="edad"
-            [(ngModel)]="mascota.edad"
+            [(ngModel)]="formMascota.edad"
             required
           />
         </div>
@@ -55,7 +55,7 @@
             type="double"
             id="peso"
             name="peso"
-            [(ngModel)]="mascota.peso"
+            [(ngModel)]="formMascota.peso"
             required
           />
         </div>
@@ -65,7 +65,7 @@
             type="text"
             id="enfermedad"
             name="enfermedad"
-            [(ngModel)]="mascota.enfermedad"
+            [(ngModel)]="formMascota.enfermedad"
             required
           />
         </div>
@@ -78,7 +78,7 @@
             type="text"
             id="urlImagen"
             name="urlImagen"
-            [(ngModel)]="mascota.urlImagen"
+            [(ngModel)]="formMascota.urlImagen"
             required
           />
         </div>
@@ -90,7 +90,7 @@
           </select>
         </div>
       </div>
-      <button type="submit" class="btnSubmit">Guardar Cambios</button>
+      <button type="submit" (click)="updateMascota()" class="btnSubmit">Guardar Cambios</button>
     </form>
   </div>
 </main>

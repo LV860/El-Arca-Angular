@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Mascota } from '../interfaces-springboot/Mascota';
 import { BehaviorSubject } from 'rxjs';
-import { Mascota } from 'src/app/interfaces-springboot/Mascota';
+
 
 @Injectable({
   providedIn: 'root'
@@ -128,4 +129,23 @@ export class MascotaService {
     this.mascotasList.push(mascota);
     this.mascotasSubject.next(this.mascotasList);
   }
+
+
+  findAll(){
+    return this.mascotasList;
+  }
+
+  findById(id: number):Mascota {
+    const mascota:Mascota=this.mascotasList.find(o => o.id === id)!;
+    return mascota;
+  }
+
+  updateMascota(updatedMascota: Mascota) {
+    const index = this.mascotasList.findIndex(m => m.id === updatedMascota.id);
+    if (index !== -1) {
+      this.mascotasList[index] = updatedMascota;
+      this.mascotasSubject.next(this.mascotasList);
+    }
+  }
+
 }

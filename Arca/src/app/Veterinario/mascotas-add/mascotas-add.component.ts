@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Mascota } from 'src/app/interfaces-springboot/Mascota';
-import { MascotaService } from 'src/app/services/mascotaService';
+import { MascotaService } from 'src/app/service/mascota.service';
 
 @Component({
   selector: 'app-mascotas-add',

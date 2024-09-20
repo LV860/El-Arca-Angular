@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'mascotas', component: MascotasTableComponent },
   { path: 'mascotasAdd', component: MascotasAddComponent },
-  { path: 'mascotasDetail', component: MascotasDetailComponent },
+  { path: 'mascotasDetail/:id', component: MascotasDetailComponent },
   { path: 'loginCliente', component: InicioClienteComponent },
   { path: 'loginVeterinario', component: InicioVeterinarioComponent },
 ];
