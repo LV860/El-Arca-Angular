@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Mascota } from 'src/app/interfaces-springboot/Mascota';
+import { MascotaService } from 'src/app/services/mascotaService';
 
 @Component({
   selector: 'app-mascotas-add',
@@ -30,10 +32,11 @@ export class MascotasAddComponent {
 
 
 //Agregar una mascota a partir del form
-  addMascota(){
-    console.log(this.formMascota);
-    //copiar valores
-    this.sendMascota = Object.assign({}, this.formMascota);
-    this.addMascotaEvent.emit(this.formMascota);
-  }
+constructor(private mascotaService: MascotaService, private router: Router) {}
+
+addMascota() {
+  console.log(this.formMascota);
+  this.mascotaService.addMascota(this.formMascota);
+  this.router.navigate(['/mascotas']); // Navigate back to the table
+}
 }
