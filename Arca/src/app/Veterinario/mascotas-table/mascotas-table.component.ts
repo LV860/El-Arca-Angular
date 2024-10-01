@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { mergeMap } from 'rxjs';
 import { Mascota } from 'src/app/interfaces-springboot/Mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
 
@@ -16,10 +17,22 @@ export class MascotasTableComponent implements OnInit {
   mascotasList: Mascota[] = [];
 
   //INYECTAR DEPENDENCIAS
-  constructor(private router: Router, private mascotaService: MascotaService) {}
+  constructor(private router: Router, private route: ActivatedRoute, private mascotaService: MascotaService) {}
 
   ngOnInit(): void {
-    this.mascotasList=this.mascotaService.findAll();
+      console.log('ngOnInit de table');
+      // Llamado al API
+      this.route.paramMap.subscribe(params => {
+        const id = Number(params.get('id'));
+
+        this.mascotaService.findById(id).pipe(
+          mergeMap(
+            (mascotaInfo) => {
+              this.mascota = mascotaInfo;
+            }
+          )
+        )
+      })
     };
 
 

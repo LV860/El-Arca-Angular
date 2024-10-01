@@ -17,6 +17,7 @@ import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/ini
 import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-detail.component';
 import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     MascotasDetailComponent,
     MascotasAddComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
