@@ -37,15 +37,15 @@ export class MascotasDetailComponent implements OnInit {
     console.log('ngOnInit de detail');
     // Llamado al API
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.mascota = this.mascotaService.findById(id);
-    if (this.mascota) {
-      this.formMascota = { ...this.mascota };
-    }
+    this.mascotaService.findById(id).subscribe((mascota) => {
+      this.formMascota = mascota;
+    })
   }
 
+  
   updateMascota() {
     console.log(this.formMascota);
-    this.mascotaService.updateMascota(this.formMascota);
+    this.mascotaService.addMascota(this.formMascota);
     this.router.navigate(['/mascotas']); // Navigate back to the table
   }
 }
