@@ -10,6 +10,7 @@ import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.co
 import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-detail.component';
 import { InicioClienteComponent } from './landingPage/inicio-cliente/inicio-cliente.component';
 import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/inicio-veterinario.component';
+import { ClientesTableComponent } from './Veterinario/clientes-table/clientes-table.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'mascotasDetail/:id', component: MascotasDetailComponent },
   { path: 'loginCliente', component: InicioClienteComponent },
   { path: 'loginVeterinario', component: InicioVeterinarioComponent },
+  { path: 'clientes', component: ClientesTableComponent },
 ];
 
 @NgModule({

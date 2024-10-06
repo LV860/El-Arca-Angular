@@ -18,6 +18,7 @@ import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-
 import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientesTableComponent } from './Veterinario/clientes-table/clientes-table.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     InicioVeterinarioComponent,
     MascotasDetailComponent,
     MascotasAddComponent,
+    ClientesTableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],
