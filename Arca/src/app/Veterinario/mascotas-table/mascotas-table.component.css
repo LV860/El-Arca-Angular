@@ -103,3 +103,19 @@ td {
   height: 100px; /* Example height, adjust as needed */
   width: 100%; /* Full width */
 }
+
+
+.tagEstadoMascotaTratamiento {
+  color: #117b34ff;
+  padding: 0.2em 0.6em;
+  border-radius: 10rem;
+  background-color: #abf8c4;
+  border: none; /* Remove default button border */
+}
+
+.tagEstadoMascotaInactiva {
+  color: #896901;
+  padding: 0.2em 0.6em;
+  border-radius: 10rem;
+  background-color: #fffae8;
+}
