@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Mascota } from '../interfaces-springboot/Mascota';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 
 @Injectable({
@@ -29,10 +29,14 @@ export class MascotaService {
   }
 */
 //async addMascota(mascota: Mascota) {
-  addMascota(mascota: Mascota) {
-    //mascota.id = await this.generateUniqueId();
-    // En este caso la información va por el cuerpo de la petición, primero la url y luego la info que envío
-    this.http.post('http://localhost:8090/mascota/add', mascota).subscribe();
+
+  addMascota(mascota: Mascota): Observable<Mascota> {
+    return this.http.post<Mascota>('http://localhost:8090/mascota/add', mascota).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        return throwError(error);
+      })
+    );
   }
 
   findAll(){

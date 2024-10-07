@@ -11,7 +11,7 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class ClientesAddComponent {
 
 
-  cliente: Cliente = {
+  formCliente: Cliente = {
     correo: '',
     celular: '',
     nombre: '',
@@ -24,10 +24,14 @@ export class ClientesAddComponent {
 
   constructor(private clienteService: ClienteService, private router: Router) {}
 
-  addCliente( cliente: Cliente) {
-    console.log(cliente);
-    this.clienteService.addCliente(cliente);
-    this.router.navigate(['/clientes']); // Navigate back to the table
+  addCliente(cliente: Cliente) {
+    this.clienteService.addCliente(cliente).subscribe(
+      (newCliente) => {
+        this.router.navigate(['/clientes']); // Navigate back to the table after successful operation
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
   }
-
 }

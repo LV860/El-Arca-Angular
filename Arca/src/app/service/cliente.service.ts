@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from '../interfaces-springboot/Cliente';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,20 @@ export class ClienteService {
   constructor(
     private http: HttpClient
   ) { }
-
+/*
   addCliente(cliente: Cliente) {
     //mascota.id = await this.generateUniqueId();
     // En este caso la información va por el cuerpo de la petición, primero la url y luego la info que envío
     this.http.post('http://localhost:8090/clientes/add', cliente).subscribe();
+  }
+*/
+  addCliente(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>('http://localhost:8090/clientes/add', cliente).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        return throwError(error);
+      })
+    );
   }
 
 

@@ -51,6 +51,4 @@ export class MascotasTableComponent implements OnInit {
       this.mascotasList.splice(index, 1);
       this.mascotaService.deleteById(mascota.id);
     }
-      
-
 }
