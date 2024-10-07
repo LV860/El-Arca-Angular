@@ -9,6 +9,11 @@ import { Observable } from 'rxjs';
 export class ClienteService {
 
   private clientesList: Cliente[] = [];
+
+
+  private clienteEdit!: Cliente;
+
+  
   
   constructor(
     private http: HttpClient
@@ -19,6 +24,20 @@ export class ClienteService {
     // En este caso la información va por el cuerpo de la petición, primero la url y luego la info que envío
     this.http.post('http://localhost:8090/clientes/add', cliente).subscribe();
   }
+
+
+  updateCliente(cliente: Cliente): void {
+    this.http.put(`http://localhost:8090/clientes/update/${cliente.id}`, cliente)
+      .subscribe({
+        next: (response) => {
+          console.log('Cliente actualizado con éxito:', response);
+        },
+        error: (error) => {
+          console.error('Error al actualizar el cliente:', error);
+        }
+      });
+  }
+
 
   findAll(){
     return this.http.get<Cliente[]>('http://localhost:8090/clientes/all');
@@ -36,5 +55,14 @@ export class ClienteService {
   private async generateUniqueId(): Promise<number> {
     const mascotasList = await this.findAll().toPromise();
     return mascotasList!.length + 1;
+  }
+
+
+  setClienteEdit(cliente: Cliente) {
+    this.clienteEdit = cliente;
+  }
+
+  getClienteEdit(): Cliente {
+    return this.clienteEdit;
   }
 }

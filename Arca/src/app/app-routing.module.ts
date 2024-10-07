@@ -11,6 +11,9 @@ import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-
 import { InicioClienteComponent } from './landingPage/inicio-cliente/inicio-cliente.component';
 import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/inicio-veterinario.component';
 import { ClientesTableComponent } from './Veterinario/clientes-table/clientes-table.component';
+import { ClientesAddComponent } from './Veterinario/clientes-add/clientes-add.component';
+import { ClientesEditComponent } from './Veterinario/clientes-edit/clientes-edit.component';
+import { PerfilVeterinarioComponent } from './Veterinario/perfil-veterinario/perfil-veterinario.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,10 +27,15 @@ const routes: Routes = [
   { path: 'loginCliente', component: InicioClienteComponent },
   { path: 'loginVeterinario', component: InicioVeterinarioComponent },
   { path: 'clientes', component: ClientesTableComponent },
+  { path: 'clientesAdd', component: ClientesAddComponent },
+  { path: 'clientesDetail/:id', component: ClientesEditComponent},
+  { path: 'perfilVeterinario', component: PerfilVeterinarioComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+}

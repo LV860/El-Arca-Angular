@@ -34,9 +34,9 @@ export class MascotasAddComponent {
 //Agregar una mascota a partir del form
 constructor(private mascotaService: MascotaService, private router: Router) {}
 
-addMascota() {
-  console.log(this.formMascota);
-  this.mascotaService.addMascota(this.formMascota);
+addMascota( mascota: Mascota) {
+  //console.log(mascota);
+  this.mascotaService.addMascota(mascota);
   this.router.navigate(['/mascotas']); // Navigate back to the table
 }
 }

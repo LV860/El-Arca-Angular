@@ -11,7 +11,10 @@
             
             <button type="submit" class="btnBlue">Iniciar Sesión</button>
         </form>
-        <a routerLink="/loginVeterinario"> <h4>¿Iniciar sesión como veterinario?</h4></a>
+        <a routerLink="/loginVeterinario"> <h6>¿Iniciar sesión como veterinario?</h6></a>
+        <div *ngIf="error">
+            <p class="mensaje_error">La cedula es incorrecta</p>
+        </div>
     </section>
 </main>
 <app-footer-page></app-footer-page>

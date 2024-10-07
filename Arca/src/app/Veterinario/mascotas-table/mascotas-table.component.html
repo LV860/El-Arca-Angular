@@ -35,11 +35,20 @@
           <td>
             <img src="{{ mascota.urlImagen }}" alt="Imagen de Mascota" />
           </td>
-          <td>{{ mascota.estado }}</td>
+          <button
+              [ngClass]="{
+                'btn btn-warning tagEstadoMascotaTratamiento':
+                mascota.estado === 'En tratamiento',
+                'btn btn-warning tagEstadoMascotaInactiva':
+                mascota.estado === 'Inactiva'
+              }"
+            >
+              {{ mascota.estado }}
+            </button>
           <td>
             <button
               type="button"
-              (click)="mostrarMascota(mascota.id)"
+              (click)="editarMascota(mascota.id)"
               class="btn btn-warning"
             >
               Editar

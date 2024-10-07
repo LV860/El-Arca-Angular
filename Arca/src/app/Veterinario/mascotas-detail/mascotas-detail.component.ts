@@ -43,9 +43,12 @@ export class MascotasDetailComponent implements OnInit {
   }
 
   
-  updateMascota() {
-    console.log(this.formMascota);
-    this.mascotaService.addMascota(this.formMascota);
-    this.router.navigate(['/mascotas']); // Navigate back to the table
+  guardarCambios(mascota: Mascota) {
+    this.mascotaService.updateMascota(mascota);
+    console.log("Nombre: " + mascota.nombre);
+    this.router.navigate(['mascotas']); // Navigate back to the table
   }
+
+
+  
 }

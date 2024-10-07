@@ -11,8 +11,7 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class ClientesTableComponent {
 
   
-  //ATRIBUTOS
-  @Input()
+
   selectedCliente!: Cliente;
   //BD Lista
   clientesList: Cliente[] = [];
@@ -22,21 +21,35 @@ export class ClientesTableComponent {
   constructor(private router: Router, private route: ActivatedRoute, private clienteService: ClienteService) {}
 
   ngOnInit(): void {
+    
+    this.tablaCliente();
+    };
+
+  
+  tablaCliente() {
     this.clienteService.findAll().subscribe((clientes) => {
       this.clientesList = clientes;
     })
-    };
+  }
 
-
-    mostrarCliente(id: number) {
-      this.router.navigate(['clientesDetail', id]);
-    }
-
+  editarCliente(id: number) {
     
-    eliminarCliente(cliente: Cliente) {
-      var index = this.clientesList.indexOf(cliente);
-      this.clientesList.splice(index, 1);
-      this.clienteService.deleteById(cliente.cedula);
+    console.log( "ID: " +id);
+    if (id) {
+      this.selectedCliente = this.clientesList.find(cliente => cliente.id === id)!;
+      this.router.navigate(['clientesDetail', id]);
+      this.clienteService.setClienteEdit(this.selectedCliente);
+      //console.log( "Seleccionado: " +this.selectedCliente.nombre);
+    } else {
+      console.error('ID del cliente no está definido');
     }
+  }
+
+  
+  eliminarCliente(cliente: Cliente) {
+    var index = this.clientesList.indexOf(cliente);
+    this.clientesList.splice(index, 1);
+    this.clienteService.deleteById(cliente.id);
+  }
 
 }

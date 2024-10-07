@@ -4,13 +4,13 @@
       <a href=""><h1>El Arca</h1></a>
     </div>
     <div class="navigationBarMenuOptions">
-      <a href="/clientes/perfil"><h3>Perfil</h3></a>
-      <a href="/clientes/all"><h3>Clientes</h3></a>
-      <a href="/mascota/all"><h3>Mascotas</h3></a>
+      <a routerLink="/perfilVeterinario"><h3>Perfil</h3></a>
+      <a routerLink="/clientes"><h3>Clientes</h3></a>
+      <a routerLink="/mascotas"><h3>Mascotas</h3></a>
     </div>
     <div class="navigationBarButtons">
-      <a href="/clientes/logout">
-        <button class="btnYellow"><h3>Cerrar Sesión</h3></button>
-      </a>
+      
+      <button class="btnYellow" (click)="logOut()"><h3>Cerrar Sesión</h3></button>
+      
     </div>
   </header>

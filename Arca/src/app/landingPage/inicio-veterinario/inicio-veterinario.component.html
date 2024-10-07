@@ -3,16 +3,22 @@
     <img class="image" src="assets/images/perroVerticalFondoAzul.avif" alt="Imagen perro">
     <section class="login-section">
         <h2>Iniciar Sesión</h2>
-        <form action="/clientes/perfil" method="post">
+        <form (ngSubmit)="iniciarSesion()">
             <label for="id">Id:</label>
-            <input type="number" id="id" name="id" required>
+            <input type="number" id="id" name="id" 
+            [(ngModel)]="id" required>
             <label for="contra">Contraseña:</label>
-            <input type="text" id="contra" name="contra" required>
+            <input type="text" id="contra" name="contra" 
+            [(ngModel)]="contra" required>
             
             <button type="submit" class="btnBlue">Iniciar Sesión</button>
         </form>
-        <a routerLink="/loginCliente"> <h4>¿Iniciar sesión como cliente?</h4></a>
-        <h4 class="mensaje_error" th:text="${error}"></h4>
+        <a routerLink="/loginCliente"> <h6>¿Iniciar sesión como cliente?</h6></a>
+        <div *ngIf="error">
+            <p class="mensaje_error">El id o la contraseña son incorrectos</p>
+        </div>
+
+        
     </section>
 </main>
 

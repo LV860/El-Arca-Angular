@@ -3,7 +3,7 @@
   <div class="edit-client-form">
     <h1>Editar Mascota</h1>
 
-    <form>
+    <form (ngSubmit)="guardarCambios(formMascota)">
       <div class="form-row">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
@@ -96,7 +96,7 @@
           </select>
         </div>
       </div>
-      <button type="submit" (click)="updateMascota()" class="btnSubmit">
+      <button type="submit"  class="btnSubmit">
         Guardar Cambios
       </button>
     </form>

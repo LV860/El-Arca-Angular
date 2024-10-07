@@ -1,0 +1,34 @@
+<app-header-veterinario></app-header-veterinario>
+<main>
+    <div class="add-client-form">
+      <h1>Añadir Cliente</h1>
+      <form (ngSubmit)="addCliente(cliente)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" 
+            [(ngModel)]="cliente.nombre"
+            required />
+          </div>
+          <div class="form-group">
+            <label for="cedula">Cédula</label>
+            <input type="number" id="cedula" name="cedula" 
+            [(ngModel)]="cliente.cedula" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" 
+            [(ngModel)]="cliente.correo" required />
+          </div>
+          <div class="form-group">
+            <label for="celular">Número de Teléfono</label>
+            <input type="tel" id="celular" name="celular" 
+            [(ngModel)]="cliente.celular" required />
+          </div>
+        </div>
+        <button type="submit" class="btnSubmit">Añadir</button>
+      </form>
+    </div>
+  </main>

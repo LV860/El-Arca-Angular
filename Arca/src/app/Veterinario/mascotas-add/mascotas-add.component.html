@@ -2,7 +2,7 @@
 <main>
     <div class="add-client-form">
       <h1>Añadir Mascota</h1>
-      <form>
+      <form (ngSubmit)="addMascota(formMascota)">
         <div class="form-row">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
@@ -85,7 +85,7 @@
             />
           </div>
         </div>
-        <button type="submit" (click)="addMascota()" class="btnSubmit">Añadir</button>
+        <button type="submit" class="btnSubmit">Añadir</button>
       </form>
     </div>
   </main>

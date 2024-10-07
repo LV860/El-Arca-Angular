@@ -22,14 +22,27 @@ export class MascotasTableComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private mascotaService: MascotaService) {}
 
   ngOnInit(): void {
+    this.mascotasTable();
+  };
+
+  mascotasTable() {
     this.mascotaService.findAll().subscribe((mascotas) => {
       this.mascotasList = mascotas;
     })
-    };
+  }
 
 
-    mostrarMascota(id: number) {
+    editarMascota(id: number) {
       this.router.navigate(['mascotasDetail', id]);
+
+
+      console.log( "ID: " +id);
+    if (id) {
+      this.router.navigate(['mascotasDetail', id]);
+      
+    } else {
+      console.error('ID de la mascotano está definida');
+    }
     }
 
     

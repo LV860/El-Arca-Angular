@@ -1,0 +1,32 @@
+<app-header-veterinario></app-header-veterinario>
+
+<main>
+  <div class="profile-section">
+    <div class="profile-details">
+    
+     <img [src]="veterinario.urlImagen" alt="Foto de Perfil" /> 
+      <div class="name">
+        <p>{{ veterinario.nombre }}</p>
+         <!-- <img src="../images/logo1.png" alt="Editar perfil" class="edit-icon" />-->
+      </div>
+      <div class="email"></div>
+
+      <div class="info-card">
+        <p>
+          <span class="label">Estado:</span>
+          <span class="value">Activo</span>
+        </p>
+
+        <p>
+          <span class="label">Cédula:</span>
+          <span class="value">{{ veterinario.cedula }}</span>
+        </p>
+        
+        <p>
+          <span class="label">Especialidad:</span>
+          <span class="value">{{ veterinario.especialidad }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>

@@ -48,6 +48,20 @@ export class MascotaService {
     this.http.delete('http://localhost:8090/mascota/delete/' + id).subscribe();
   }
 
+
+  updateMascota(mascota: Mascota): void {
+    this.http.put(`http://localhost:8090/mascota/update/${mascota.id}`, mascota)
+      .subscribe({
+        next: (response) => {
+          console.log('Mascota actualizada con éxito:', response);
+        },
+
+        error: (error) => {
+          console.error('Error al actualizar la mascota:', error);
+        }
+      });
+  }
+
   /*
   updateMascota(updatedMascota: Mascota) {
     const index = this.mascotasList.findIndex(m => m.id === updatedMascota.id);
