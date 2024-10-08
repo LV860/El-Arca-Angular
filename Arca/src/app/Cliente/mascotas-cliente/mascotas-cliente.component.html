@@ -1,0 +1,88 @@
+<app-header-veterinario></app-header-veterinario>
+<main>
+  <section class="title-bar">
+    <h1>Información Mascotas</h1>
+    <div class="buttons-group">
+      <a routerLink="/mascotasAdd">
+        <button class="btnAzul">Añadir Mascota</button>
+      </a>
+    </div>
+  </section>
+  
+  <section class="profile-section">
+    <div class="profile-details">
+      <div class="image-emailName">
+        <img
+          src="/images/fotoPerfil_PorDefecto.jpg"
+          alt="Foto de Perfil"
+        />
+        <div class="name-email">
+          <span id="nameSpan">{{ cliente.nombre }}</span>
+          <span id="emailSpan">{{ cliente.correo }}</span>
+        </div>
+      </div>
+      
+      <div class="info-card">
+        <p>
+          <span class="label">Estado:</span>
+          <span class="value" [ngClass]="{
+              'tagEstadoPerfilActivo': cliente.estado === 'Activo',
+              'tagEstadoPerfilInactivo': cliente.estado === 'Inactivo'
+            }">{{ cliente.estado }}</span>
+        </p>
+        <p>
+          <span class="label">Cédula:</span>
+          <span class="value">{{ cliente.cedula }}</span>
+        </p>
+        <p>
+          <span class="label">Celular:</span>
+          <span class="value">{{ cliente.celular }}</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="client-table">
+    <h2>Mascotas del Cliente</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Raza</th>
+          <th>Edad</th>
+          <th>Peso</th>
+          <th>Enfermedad</th>
+          <th>Foto</th>
+          <th>Estado</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mascota of mascotasList">
+          <td>{{ mascota.id }}</td>
+          <td>{{ mascota.nombre }}</td>
+          <td>{{ mascota.raza }}</td>
+          <td>{{ mascota.edad }}</td>
+          <td>{{ mascota.peso }}</td>
+          <td>{{ mascota.enfermedad }}</td>
+          <td>
+            <img [src]="mascota.urlImagen" alt="Imagen de Mascota" />
+          </td>
+          <td>
+            <button [ngClass]="{
+              'btn btn-warning tagEstadoMascotaTratamiento': mascota.estado === 'En tratamiento',
+              'btn btn-warning tagEstadoMascotaInactiva': mascota.estado === 'Inactiva'
+            }">
+              {{ mascota.estado }}
+            </button>
+          </td>
+          <td>
+            <button (click)="editarMascota(mascota.id)" class="btn btn-warning">Editar</button>
+            <button (click)="eliminarMascota(mascota)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>

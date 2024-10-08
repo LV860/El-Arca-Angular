@@ -30,6 +30,16 @@ export class MascotaService {
 */
 //async addMascota(mascota: Mascota) {
 
+// Método para obtener las mascotas por ID de cliente
+getMascotasByClienteId(clienteId: number): Observable<Mascota[]> {
+  return this.http.get<Mascota[]>(`http://localhost:8090/mascota/find?id=`).pipe(
+    catchError((error: HttpErrorResponse) => {
+      console.error('Error al obtener las mascotas:', error);
+      return throwError(error);
+    })
+  );
+}
+
   addMascota(mascota: Mascota): Observable<Mascota> {
     return this.http.post<Mascota>('http://localhost:8090/mascota/add', mascota).pipe(
       catchError((error: HttpErrorResponse) => {

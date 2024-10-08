@@ -23,6 +23,9 @@ import { ClientesAddComponent } from './Veterinario/clientes-add/clientes-add.co
 import { ClientesEditComponent } from './Veterinario/clientes-edit/clientes-edit.component';
 
 import { PerfilVeterinarioComponent } from './Veterinario/perfil-veterinario/perfil-veterinario.component';
+import { HeaderClienteComponent } from './Cliente/header-cliente/header-cliente.component';
+import { PerfilClienteComponent } from './Cliente/perfil-cliente/perfil-cliente.component';
+import { MascotasClienteComponent } from './Cliente/mascotas-cliente/mascotas-cliente.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { PerfilVeterinarioComponent } from './Veterinario/perfil-veterinario/per
     ClientesAddComponent,
     ClientesEditComponent,
     PerfilVeterinarioComponent,
+    HeaderClienteComponent,
+    PerfilClienteComponent,
+    MascotasClienteComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],

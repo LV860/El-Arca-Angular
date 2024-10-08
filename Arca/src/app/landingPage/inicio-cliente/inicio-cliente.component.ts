@@ -24,7 +24,7 @@ export class InicioClienteComponent {
     mascotas: [] as Mascota[]
   };
   
-  constructor(private router: Router, private clienteService: ClienteService) {}
+  constructor(private router: Router, private route: ActivatedRoute,private clienteService: ClienteService) {}
 
   iniciarSesion() {
     // Llamar al servicio para obtener el cliente por ID

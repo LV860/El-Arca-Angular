@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cliente } from '../interfaces-springboot/Cliente';
+import { Mascota } from '../interfaces-springboot/Mascota';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 
@@ -12,7 +13,6 @@ export class ClienteService {
 
 
   private clienteEdit!: Cliente;
-
   
   
   constructor(
@@ -24,7 +24,8 @@ export class ClienteService {
     // En este caso la información va por el cuerpo de la petición, primero la url y luego la info que envío
     this.http.post('http://localhost:8090/clientes/add', cliente).subscribe();
   }
-*/
+    */
+
   addCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>('http://localhost:8090/clientes/add', cliente).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -54,6 +55,7 @@ export class ClienteService {
         }
       });
   }
+      
 
 
   findAll(){
@@ -85,12 +87,32 @@ export class ClienteService {
     return mascotasList!.length + 1;
   }
 */
+getClienteById(id: number): Observable<Cliente> {
+  return this.http.get<Cliente>(`http://localhost:8090/clientes/find?id=`).pipe(
+    catchError((error: HttpErrorResponse) => {
+      console.error('Error al obtener el cliente:', error);
+      return throwError(error);
+    })
+  );
+}
+
+// Método para obtener las mascotas de un cliente
+getMascotasByClienteId(clienteId: number): Observable<Mascota[]> {
+  return this.http.get<Mascota[]>(`http://localhost:8090/mascota/cliente/${clienteId}`).pipe(
+    catchError((error: HttpErrorResponse) => {
+      console.error('Error al obtener las mascotas:', error);
+      return throwError(error);
+    })
+  );
+}
 
   setClienteEdit(cliente: Cliente) {
     this.clienteEdit = cliente;
   }
 
-  getClienteEdit(): Cliente {
-    return this.clienteEdit;
+  // Método para obtener un cliente por ID
+  getClienteEdit(clienteId: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`http://localhost:8090/clientes/find?id=`);
   }
+
 }
