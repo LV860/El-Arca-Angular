@@ -70,23 +70,19 @@ export class ClienteService {
     console.log(id);
     this.http.delete('http://localhost:8090/clientes/delete/' + id).subscribe();
   }
-  /*
+  
    // Obtener un cliente por su cédula
   findByCedula(cedula: number): Observable<Cliente> {
-    return this.http.get<Cliente>('http://localhost:8090/clientes/find?cedula=' + cedula);
-  }
-
-  // Eliminar un cliente por su cédula
-  deleteByCedula(cedula: number): void {
-    console.log(cedula);
-    this.http.delete('http://localhost:8090/clientes/delete/' + cedula).subscribe();
+    //return this.http.get<Cliente>('http://localhost:8090/dueño/find?cedula=' + cedula);
+    //return this.http.get<Cliente>('http://localhost:8090/dueño/perfilCliente?cedula=' + cedula);
+    return this.http.get<Cliente>('http://localhost:8090/dueño/perfilCliente/' + cedula);
   }
 
   private async generateUniqueId(): Promise<number> {
     const mascotasList = await this.findAll().toPromise();
     return mascotasList!.length + 1;
   }
-*/
+
 getClienteById(id: number): Observable<Cliente> {
   return this.http.get<Cliente>(`http://localhost:8090/clientes/find?id=`).pipe(
     catchError((error: HttpErrorResponse) => {

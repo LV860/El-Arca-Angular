@@ -12,7 +12,8 @@ import { ClienteService } from 'src/app/service/cliente.service';
 export class InicioClienteComponent {
 
   cedula!: number;  
-  error: boolean = false;  
+  error: boolean = false;
+  clienteList: Cliente [] = [];
 
   clienteValido: Cliente = {
     id: 0,
@@ -26,9 +27,33 @@ export class InicioClienteComponent {
   
   constructor(private router: Router, private route: ActivatedRoute,private clienteService: ClienteService) {}
 
+  listaClientes(){
+    this.clienteService.findAll().subscribe((cliente)=>{
+      this.clienteList = cliente;
+    })
+  }
+
   iniciarSesion() {
+
+    this.clienteService.findByCedula(this.cedula).subscribe((cliente) => {
+      this.clienteValido = cliente;
+
+      if(this.clienteValido.cedula == this.cedula){
+        this.clienteService.setClienteEdit(this.clienteValido);
+        this.router.navigate(['/perfilCliente', this.clienteValido.cedula])
+      }
+
+      else{
+        this.error = true;
+      }
+    }, (error) => {
+      console.error('Error al buscar cliente: ', error);
+      this.error = true;
+    });
+
+    /*
     // Llamar al servicio para obtener el cliente por ID
-    this.clienteService.findById(this.cedula).subscribe((cliente) => {
+    this.clienteService.findById(this.).subscribe((cliente) => {
       this.clienteValido = cliente;
   
       // Verificar si el ID es correcto
@@ -42,6 +67,7 @@ export class InicioClienteComponent {
       console.error('Error al buscar cliente:', error);
       this.error = true; // Mostrar mensaje de error si la búsqueda falla
     });
+    */
   }  
   
 }
