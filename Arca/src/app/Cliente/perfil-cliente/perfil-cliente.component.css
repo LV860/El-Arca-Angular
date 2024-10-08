@@ -205,4 +205,19 @@ main {
   
   
   
-  
+    /*------------------------------------------- TAGS DE ESTADOS ------------------------------------------*/
+.tagEstadoPerfilActivo {
+  color: #117b34ff;
+  padding: 0.2em 0.6em; /* Adjust padding to make the tag smaller */
+  border-radius: 10rem;
+  background-color: #abf8c4;
+  border: none; /* Remove default button border */
+}
+
+.tagEstadoPerfilInactivo {
+  color: #896901;
+  padding: 0.2em 0.6em; /* Adjust padding to make the tag smaller */
+  border-radius: 10rem;
+  background-color: #fffae8;
+  border: none; /* Remove default button border */
+}
