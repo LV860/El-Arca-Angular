@@ -25,12 +25,14 @@ export class ClientesEditComponent {
 
   constructor(private router: Router, private route: ActivatedRoute, private clienteService: ClienteService) {}
 
-
   ngOnInit(): void {
-
-    this.cliente = this.clienteService.getClienteEdit();
-    //console.log(this.cliente.nombre);
-    };
+    console.log('ngOnInit de detail');
+    // Llamado al API
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.clienteService.findById(id).subscribe((cliente) => {
+      this.cliente = cliente;
+    })
+  }
 
     /*
     guardarCambios(cliente: Cliente) {
