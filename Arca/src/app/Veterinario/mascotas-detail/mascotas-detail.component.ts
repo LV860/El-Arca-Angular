@@ -42,12 +42,25 @@ export class MascotasDetailComponent implements OnInit {
     })
   }
 
-  
+  /*
   guardarCambios(mascota: Mascota) {
     this.mascotaService.updateMascota(mascota);
     console.log("Nombre: " + mascota.nombre);
     this.router.navigate(['mascotas']); // Navigate back to the table
   }
+*/
+  guardarCambios(mascota: Mascota) {
+    this.mascotaService.addMascota(mascota).subscribe(
+      (newMascota) => {
+        this.router.navigate(['/mascotas']); // Navigate back to the table after successful operation
+      },
+      (error) => {
+        console.error('Error:', error);
+      }
+    );
+  }
+
+
 
 
   
