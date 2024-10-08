@@ -32,4 +32,50 @@
       </div>
     </div>
   </div>
+
+  <!-- SECCION QUE PERMITE CARGAR DATOS EN LA TABLA -->
+
+  <div class="scrollable-container">
+    <div class="card" *ngFor="let mascota of cliente.mascotas">
+      <img
+        class="image-scrollable"
+        [src]="mascota.urlImagen"
+        alt="Imagen de Mascota"
+      />
+      <div class="image-content">
+        <div class="info-container">
+          <div class="card-nombre-estadoicon">
+            <h3>{{ mascota.nombre }}</h3>
+            <p>
+              <span
+                class="value"
+                [ngClass]="{
+                  'tagEstadoMascotaTratamiento': mascota.estado === 'En tratamiento',
+                  'tagEstadoMascotaInactiva': mascota.estado === 'Inactiva'
+                }"
+              >
+                {{ mascota.estado }}
+              </span>
+            </p>
+          </div>
+  
+          <p>
+            <strong>Raza:</strong> <span>{{ mascota.raza }}</span>
+          </p>
+          <p>
+            <strong>Enfermedad:</strong> <span>{{ mascota.enfermedad }}</span>
+          </p>
+          <div class="cardPesoEdad">
+            <p class="cardPesoEdad-Edad">
+              <strong>Edad:</strong> <span>{{ mascota.edad }}</span>
+            </p>
+            <p class="cardPesoEdad-Peso">
+              <strong>Peso:</strong> <span>{{ mascota.peso }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
