@@ -32,10 +32,22 @@ export class ClientesEditComponent {
     //console.log(this.cliente.nombre);
     };
 
+    /*
     guardarCambios(cliente: Cliente) {
       this.clienteService.updateCliente(cliente);
       console.log( "Nombre: " +cliente.nombre);
       this.router.navigate(['clientes']);
+    }
+*/
+    guardarCambios(cliente: Cliente) {
+      this.clienteService.addCliente(cliente).subscribe(
+        (newCliente) => {
+          this.router.navigate(['/clientes']); // Navigate back to the table after successful operation
+        },
+        (error) => {
+          console.error('Error:', error);
+        }
+      );
     }
 
 }

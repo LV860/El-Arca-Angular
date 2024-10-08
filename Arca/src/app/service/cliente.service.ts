@@ -34,6 +34,14 @@ export class ClienteService {
     );
   }
 
+  updateCliente1(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(`http://localhost:8090/clientes/update/${cliente.id}`, cliente).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        return throwError(error);
+      })
+    );
+  }
 
   updateCliente(cliente: Cliente): void {
     this.http.put(`http://localhost:8090/clientes/update/${cliente.id}`, cliente)
