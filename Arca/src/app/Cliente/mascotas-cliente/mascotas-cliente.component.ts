@@ -27,7 +27,7 @@ export class MascotasClienteComponent implements OnInit {
   // Método para obtener información del cliente (ejemplo, puedes ajustar según tu lógica)
   obtenerCliente(): void {
     const clienteId = 1; // Aquí debes obtener el ID del cliente de acuerdo a tu lógica
-    this.clienteService.getClienteEdit(clienteId).subscribe(
+    this.clienteService.getClienteById(clienteId).subscribe(
       (data: Cliente) => {
         this.cliente = data; // Asigna la información del cliente
       },

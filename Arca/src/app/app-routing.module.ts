@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'perfilVeterinario/:id', component: PerfilVeterinarioComponent},
   { path: 'mascotasCliente', component: MascotasClienteComponent },
   { path: 'headerCliente', component: HeaderClienteComponent },
-  { path: 'perfilCliente', component: PerfilClienteComponent },
+  { path: 'perfilCliente/:cedula', component: PerfilClienteComponent },
 ];
 
 @NgModule({

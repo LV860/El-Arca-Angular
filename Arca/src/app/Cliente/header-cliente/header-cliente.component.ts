@@ -21,7 +21,7 @@ export class HeaderClienteComponent {
 
   ngOnInit(): void {
     const clienteId = this.route.snapshot.params['id']; // Obtén el ID del cliente de la ruta
-    this.clienteService.getClienteEdit(clienteId).subscribe(cliente => {
+    this.clienteService.getClienteById(clienteId).subscribe(cliente => {
       this.cliente = cliente;
       this.id = this.cliente.id; // Ahora puedes acceder al ID
     });

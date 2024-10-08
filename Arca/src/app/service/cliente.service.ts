@@ -63,7 +63,7 @@ export class ClienteService {
   }
 
   findById(id: number):Observable<Cliente> {
-    return this.http.get<Cliente>('http://localhost:8090/clientes/find?id=' + id)
+    return this.http.get<Cliente>('http://localhost:8090/clientes/find/?id=' + id)
   }
 
   deleteById(id: number) {
@@ -75,7 +75,7 @@ export class ClienteService {
   findByCedula(cedula: number): Observable<Cliente> {
     //return this.http.get<Cliente>('http://localhost:8090/dueño/find?cedula=' + cedula);
     //return this.http.get<Cliente>('http://localhost:8090/dueño/perfilCliente?cedula=' + cedula);
-    return this.http.get<Cliente>('http://localhost:8090/dueño/perfilCliente/' + cedula);
+    return this.http.get<Cliente>('http://localhost:8090/clientes/findCedula/' + cedula);
   }
 
   private async generateUniqueId(): Promise<number> {
@@ -84,14 +84,14 @@ export class ClienteService {
   }
 
 getClienteById(id: number): Observable<Cliente> {
-  return this.http.get<Cliente>(`http://localhost:8090/clientes/find?id=`).pipe(
+  return this.http.get<Cliente>(`http://localhost:8090/clientes/find/?id=`).pipe(
     catchError((error: HttpErrorResponse) => {
       console.error('Error al obtener el cliente:', error);
       return throwError(error);
     })
   );
 }
-
+/*
 // Método para obtener las mascotas de un cliente
 getMascotasByClienteId(clienteId: number): Observable<Mascota[]> {
   return this.http.get<Mascota[]>(`http://localhost:8090/mascota/cliente/${clienteId}`).pipe(
@@ -100,15 +100,16 @@ getMascotasByClienteId(clienteId: number): Observable<Mascota[]> {
       return throwError(error);
     })
   );
-}
+}*/
 
   setClienteEdit(cliente: Cliente) {
     this.clienteEdit = cliente;
   }
 
   // Método para obtener un cliente por ID
-  getClienteEdit(clienteId: number): Observable<Cliente> {
-    return this.http.get<Cliente>(`http://localhost:8090/clientes/find?id=`);
+  getClienteEdit(): Cliente {
+    //return this.http.get<Cliente>(`http://localhost:8090/clientes/find?id=`);
+    return this.clienteEdit;
   }
 
 }
