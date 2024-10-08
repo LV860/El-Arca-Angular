@@ -4,16 +4,15 @@
     <img class="image" src="assets/images/perroVerticalFondoAmarillo.avif" alt="Imagen perro">
     <section class="login-section">
         <h2>Iniciar Sesión</h2>
-        <form action="/dueño/perfilCliente" method="post">
+        <form (ngSubmit)="iniciarSesion()">
             <label for="cedula">Cédula:</label>
-            <input type="number" id="cedula" name="cedula" required>
-          
+            <input type="number" id="cedula" name="cedula" [(ngModel)]="cedula" required>
             
             <button type="submit" class="btnBlue">Iniciar Sesión</button>
-        </form>
-        <a routerLink="/loginVeterinario"> <h6>¿Iniciar sesión como veterinario?</h6></a>
-        <div *ngIf="error">
-            <p class="mensaje_error">La cedula es incorrecta</p>
+          </form>
+          <a routerLink="/loginVeterinario"><h6>¿Iniciar sesión como veterinario?</h6></a>
+          <div *ngIf="error">
+            <p class="mensaje_error">La cédula es incorrecta</p>
         </div>
     </section>
 </main>
