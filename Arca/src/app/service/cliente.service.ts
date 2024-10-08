@@ -63,7 +63,7 @@ export class ClienteService {
   }
 
   findById(id: number):Observable<Cliente> {
-    return this.http.get<Cliente>('http://localhost:8090/clientes/find/?id=' + id)
+    return this.http.get<Cliente>('http://localhost:8090/clientes/find?id=' + id)
   }
 
   deleteById(id: number) {
