@@ -14,6 +14,10 @@ import { ClientesTableComponent } from './Veterinario/clientes-table/clientes-ta
 import { ClientesAddComponent } from './Veterinario/clientes-add/clientes-add.component';
 import { ClientesEditComponent } from './Veterinario/clientes-edit/clientes-edit.component';
 import { PerfilVeterinarioComponent } from './Veterinario/perfil-veterinario/perfil-veterinario.component';
+import { MascotasClienteComponent } from './Cliente/mascotas-cliente/mascotas-cliente.component';
+import { HeaderClienteComponent } from './Cliente/header-cliente/header-cliente.component';
+import { PerfilClienteComponent } from './Cliente/perfil-cliente/perfil-cliente.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +34,9 @@ const routes: Routes = [
   { path: 'clientesAdd', component: ClientesAddComponent },
   { path: 'clientesDetail/:id', component: ClientesEditComponent},
   { path: 'perfilVeterinario/:id', component: PerfilVeterinarioComponent},
+  { path: 'mascotasCliente', component: MascotasClienteComponent },
+  { path: 'headerCliente', component: HeaderClienteComponent },
+  { path: 'perfilCliente', component: PerfilClienteComponent },
 ];
 
 @NgModule({

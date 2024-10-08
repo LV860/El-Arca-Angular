@@ -97,7 +97,8 @@ body {
   
   .btnYellow h3 {
     font-weight: normal;
-    color: #544101ff;
+    color: #544101ff;    
+    font-size: 17px;
     margin: 0;
   }
   

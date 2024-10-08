@@ -1,5 +1,14 @@
 /*------------------------------------------- Footer ------------------------------------------*/
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
 footer {
     display: flex;
     flex-direction: row;
@@ -9,6 +18,10 @@ footer {
     background-color: rgb(46, 14, 115);
     bottom: 0;
     font-family: "Manrope", Helvetica, Arial, serif;
+    bottom: 0; /* Se adhiere al fondo */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    z-index: 10; /* Para que esté por encima de otros elementos si es necesario */
+    position: fixed;
   }
   
   .copyright {
