@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'clientes', component: ClientesTableComponent },
   { path: 'clientesAdd', component: ClientesAddComponent },
   { path: 'clientesDetail/:id', component: ClientesEditComponent},
-  { path: 'perfilVeterinario', component: PerfilVeterinarioComponent},
+  { path: 'perfilVeterinario/:id', component: PerfilVeterinarioComponent},
 ];
 
 @NgModule({

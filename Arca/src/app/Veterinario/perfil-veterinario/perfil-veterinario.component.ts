@@ -27,8 +27,10 @@ export class PerfilVeterinarioComponent {
 
   ngOnInit(): void {
 
-    this.veterinario = this.veterinarioService.getVeterinarioPerfil();
-    console.log("Nombre Veterinario: " +this.veterinario.nombre);
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.veterinarioService.findById(id).subscribe((vet) => {
+      this.veterinario = vet;
+    })
 
   }
 

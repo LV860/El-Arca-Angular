@@ -55,7 +55,7 @@ export class InicioVeterinarioComponent {
       // Verifica si el ID y la contraseña son válidos después de obtener la respuesta
       if (this.veterinarioValido.id === this.id && this.veterinarioValido.contrasena === this.contra) {
         this.veterinarioService.setVeterinarioPerfil(this.veterinarioValido);
-        this.router.navigate(['/perfilVeterinario']); // Redirigir a la página del veterinario si las credenciales son correctas
+        this.router.navigate(['/perfilVeterinario', this.veterinarioValido.id]); // Redirigir a la página del veterinario si las credenciales son correctas
       } else {
         this.error = true; // Muestra el mensaje de error si las credenciales son incorrectas
       }
