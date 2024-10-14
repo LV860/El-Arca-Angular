@@ -1,0 +1,100 @@
+/* General styles for the profile section */
+body {
+    font-family: "Manrope", sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profile-section {
+    padding: 40px;
+    background-color: #fff;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    font-size: 1.17em;
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  
+  
+  .profile-details img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .profile-details .name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e0e73ff;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-details .name img.edit-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .profile-details .email {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .info-card {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .info-card p {
+    font-size: 16px;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .info-card .label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .info-card .value {
+    color: #555;
+  }
+  
+  .btnLogout {
+    background-color: #d13160;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 26px;
+    border: none;
+    cursor: pointer;
+    font-family: "Manrope", sans-serif;
+    margin-top: 20px;
+    width: 150px;
+  }
+  

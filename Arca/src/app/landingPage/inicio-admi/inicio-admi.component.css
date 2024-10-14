@@ -1,0 +1,103 @@
+main{
+    background-color: #f2ba03ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 10px;
+        
+}
+
+
+.image {
+
+    width: 500px; /* Ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+
+
+
+/* Estilos específicos para la pantalla de login */
+.login-section {
+    
+    max-width: 400px; /* Asegura que no se desborde en pantallas más pequeñas */
+
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.login-section a{
+    
+    font-family: Manripe, sans-serif;
+    color: #379ae6ff;
+    text-align: right;
+    text-decoration: none;
+}
+
+
+.login-section a:visited{
+    color: #379ae6ff;
+}
+
+
+.login-section h2 {
+    font-family: Manripe, sans-serif;
+    color: #2e0e73ff;
+    text-align: center;
+}
+
+.login-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Manrope", sans-serif;
+    color: #333;
+}
+
+.login-section form {
+    margin-right: 15px;
+}
+
+.login-section input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Manrope", sans-serif;
+}
+
+.login-section .btnBlue {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    
+    background-color: #2e0e73ff;
+    color: white;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.login-section .btnBlue:hover {
+    background-color: #2e0e73ff;
+}
+
+.mensaje_error {
+    color: red;
+    margin-bottom: 10px;
+    text-align: right;
+}

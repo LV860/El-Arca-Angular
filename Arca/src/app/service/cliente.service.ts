@@ -12,7 +12,7 @@ export class ClienteService {
   private clientesList: Cliente[] = [];
 
 
-  private clienteEdit!: Cliente;
+  static clienteEdit: Cliente;
   
   
   constructor(
@@ -103,13 +103,13 @@ getMascotasByClienteId(clienteId: number): Observable<Mascota[]> {
 }*/
 
   setClienteEdit(cliente: Cliente) {
-    this.clienteEdit = cliente;
+    ClienteService.clienteEdit = cliente;
   }
 
   // Método para obtener un cliente por ID
   getClienteEdit(): Cliente {
     //return this.http.get<Cliente>(`http://localhost:8090/clientes/find?id=`);
-    return this.clienteEdit;
+    return ClienteService.clienteEdit;
   }
 
 }

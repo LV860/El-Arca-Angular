@@ -1,0 +1,25 @@
+<app-header-page></app-header-page>
+<main>
+    <img class="image" src="https://thumbs.dreamstime.com/b/persiga-el-retrato-en-fondo-p%C3%BArpura-en-el-estudio-vertical-37751743.jpg" alt="Imagen perro">
+    <section class="login-section">
+        <h2>Iniciar Sesión</h2>
+        <form (ngSubmit)="iniciarSesion()">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" 
+            [(ngModel)]="usuario" required>
+            <label for="contra">Contraseña:</label>
+            <input type="text" id="contra" name="contra" 
+            [(ngModel)]="contra" required>
+            
+            <button type="submit" class="btnBlue">Iniciar Sesión</button>
+        </form>
+        <a routerLink="/loginCliente"> <h6>¿Iniciar sesión como cliente?</h6></a>
+        <div *ngIf="error">
+            <p class="mensaje_error">El id o la contraseña son incorrectos</p>
+        </div>
+
+        
+    </section>
+</main>
+
+<app-footer-page></app-footer-page>

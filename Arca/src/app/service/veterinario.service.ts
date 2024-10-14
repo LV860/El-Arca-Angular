@@ -14,7 +14,7 @@ export class VeterinarioService {
   private veterinarioList: Veterianario[] = [];
 
 
-  private veterinarioPerfil!: Veterianario;
+  static veterinarioPerfil: Veterianario;
 
   
   
@@ -24,11 +24,11 @@ export class VeterinarioService {
 
 
   setVeterinarioPerfil(veterinario: Veterianario) {
-    this.veterinarioPerfil = veterinario;
+    VeterinarioService.veterinarioPerfil = veterinario;
   }
 
   getVeterinarioPerfil(): Veterianario{
-    return this.veterinarioPerfil
+    return VeterinarioService.veterinarioPerfil
   }
 
 

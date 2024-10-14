@@ -26,6 +26,18 @@ import { PerfilVeterinarioComponent } from './Veterinario/perfil-veterinario/per
 import { HeaderClienteComponent } from './Cliente/header-cliente/header-cliente.component';
 import { PerfilClienteComponent } from './Cliente/perfil-cliente/perfil-cliente.component';
 import { MascotasClienteComponent } from './Cliente/mascotas-cliente/mascotas-cliente.component';
+import { HeaderAdminComponent } from './Administrador/header-admin/header-admin.component';
+import { PerfilAdmiComponent } from './Administrador/perfil-admi/perfil-admi.component';
+import { InicioAdmiComponent } from './landingPage/inicio-admi/inicio-admi.component';
+import { TableClientesComponent } from './Administrador/Clientes/table-clientes/table-clientes.component';
+import { EditClientesComponent } from './Administrador/Clientes/edit-clientes/edit-clientes.component';
+import { AddClientesComponent } from './Administrador/Clientes/add-clientes/add-clientes.component';
+import { AddMascotasComponent } from './Administrador/Mascotas/add-mascotas/add-mascotas.component';
+import { TableMascotasComponent } from './Administrador/Mascotas/table-mascotas/table-mascotas.component';
+import { EditMascotasComponent } from './Administrador/Mascotas/edit-mascotas/edit-mascotas.component';
+import { TableVeterinariosComponent } from './Administrador/Veterinarios/table-veterinarios/table-veterinarios.component';
+import { AddVeterinariosComponent } from './Administrador/Veterinarios/add-veterinarios/add-veterinarios.component';
+import { EditVeterinariosComponent } from './Administrador/Veterinarios/edit-veterinarios/edit-veterinarios.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +62,18 @@ import { MascotasClienteComponent } from './Cliente/mascotas-cliente/mascotas-cl
     HeaderClienteComponent,
     PerfilClienteComponent,
     MascotasClienteComponent,
+    HeaderAdminComponent,
+    PerfilAdmiComponent,
+    InicioAdmiComponent,
+    TableClientesComponent,
+    EditClientesComponent,
+    AddClientesComponent,
+    AddMascotasComponent,
+    TableMascotasComponent,
+    EditMascotasComponent,
+    TableVeterinariosComponent,
+    AddVeterinariosComponent,
+    EditVeterinariosComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],

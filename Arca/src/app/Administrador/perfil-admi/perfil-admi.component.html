@@ -1,0 +1,26 @@
+<app-header-admin></app-header-admin>
+
+<main>
+  <div class="profile-section">
+    <div class="profile-details">
+      <img 
+        [src]="'https://tr.rbxcdn.com/f23d8cf4589b198c9783a1387cce79ab/420/420/Image/Png'"
+        alt="Foto de Perfil" 
+        class="profile-img"
+      />
+      <div class="name">
+        <p>{{ administrador.usuario }}</p>
+        <!-- Descomentar esta línea si deseas un icono de edición -->
+        <!-- <img src="../images/logo1.png" alt="Editar perfil" class="edit-icon" /> -->
+      </div>
+      
+
+      <div class="info-card">
+        <p>
+          <span class="label">Usuario:</span>
+          <span class="value">{{ administrador.usuario }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>

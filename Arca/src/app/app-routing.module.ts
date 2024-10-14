@@ -17,6 +17,8 @@ import { PerfilVeterinarioComponent } from './Veterinario/perfil-veterinario/per
 import { MascotasClienteComponent } from './Cliente/mascotas-cliente/mascotas-cliente.component';
 import { HeaderClienteComponent } from './Cliente/header-cliente/header-cliente.component';
 import { PerfilClienteComponent } from './Cliente/perfil-cliente/perfil-cliente.component';
+import { PerfilAdmiComponent } from './Administrador/perfil-admi/perfil-admi.component';
+import { InicioAdmiComponent } from './landingPage/inicio-admi/inicio-admi.component';
 
 
 const routes: Routes = [
@@ -37,6 +39,9 @@ const routes: Routes = [
   { path: 'mascotasCliente', component: MascotasClienteComponent },
   { path: 'headerCliente', component: HeaderClienteComponent },
   { path: 'perfilCliente/:cedula', component: PerfilClienteComponent },
+  { path: 'perfilAdmin/:id', component: PerfilAdmiComponent },
+  { path: 'loginAdmin', component: InicioAdmiComponent }
+  
 ];
 
 @NgModule({
