@@ -13,7 +13,7 @@ export class PerfilAdmiComponent {
   administrador: Administrador = {
     id: 0,
     usuario: '',
-    contrasena: '',
+    contrasenia: '',
     
   };
 

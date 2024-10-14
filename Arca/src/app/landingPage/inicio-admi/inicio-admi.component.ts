@@ -21,7 +21,7 @@ export class InicioAdmiComponent {
    adminValido: Administrador  = {
     id: 0,
     usuario: '',
-    contrasena: '',
+    contrasenia: '',
     
   };
 
@@ -39,17 +39,17 @@ export class InicioAdmiComponent {
 
     this.administradorService.findByUsuario(this.usuario).subscribe((admin) => {
 
-      console.log( "BD admin: " +admin);
+      console.log( "BD admin: " +admin.contrasenia);
       this.adminValido = admin;
 
       console.log( "adminValido usuario: " +this.adminValido.usuario);
-      console.log( "adminValido contra: " +this.adminValido.contrasena);
+      console.log( "adminValido contra: " +this.adminValido.contrasenia);
       
       console.log( "Usuario inicio: " +this.usuario);
       console.log( "Contra inicio: " +this.contra);
   
       // Verifica si el ID y la contraseña son válidos después de obtener la respuesta
-      if (this.adminValido.usuario === this.usuario && this.adminValido.contrasena === this.contra) {
+      if (this.adminValido.usuario === this.usuario && this.adminValido.contrasenia === this.contra) {
         console.log( "Se valido el admin: " +this.adminValido.id);
         this.administradorService.setAdministradorPerfil(this.adminValido);
         console.log( "Se valido el admin: " +this.adminValido.id);
