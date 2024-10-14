@@ -17,6 +17,9 @@ export class MascotasTableComponent implements OnInit {
   //BD Lista
   mascotasList: Mascota[] = [];
 
+  filterBy: string = 'todos';
+  searchQuery: string = '';
+
 
   //INYECTAR DEPENDENCIAS
   constructor(private router: Router, private route: ActivatedRoute, private mascotaService: MascotaService) {}
@@ -29,6 +32,38 @@ export class MascotasTableComponent implements OnInit {
     this.mascotaService.findAll().subscribe((mascotas) => {
       this.mascotasList = mascotas;
     })
+  }
+
+  filteredMascotasList() {
+    let filteredList = this.mascotasList;
+
+    if (this.filterBy !== 'todos') {
+      filteredList = filteredList.filter(mascota => {
+        if (this.filterBy === 'id') {
+          return mascota.id.toString() === this.searchQuery;
+        } else if (this.filterBy === 'nombre') {
+          return mascota.nombre.toLowerCase().includes(this.searchQuery.toLowerCase());
+        } else if (this.filterBy === 'raza') {
+          return mascota.raza.toLowerCase().includes(this.searchQuery.toLowerCase());
+        } else if (this.filterBy === 'enfermedad') {
+          return mascota.enfermedad!.toLowerCase().includes(this.searchQuery.toLowerCase());
+        } else if (this.filterBy === 'inactiva') {
+          return mascota.estado === 'Inactiva';
+        } else if (this.filterBy === 'en tratamiento') {
+          return mascota.estado === 'En tratamiento';
+        }
+        return true;
+      });
+    } else {
+      filteredList = filteredList.filter(mascota => {
+        return mascota.id.toString().includes(this.searchQuery) ||
+               mascota.nombre.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+               mascota.raza.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+               mascota.enfermedad!.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    }
+
+    return filteredList;
   }
 
 

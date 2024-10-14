@@ -9,6 +9,41 @@
       <!-- Los botones para editar y eliminar clientes se pueden gestionar aquí -->
     </div>
   </section>
+
+  <!-- Filter Form -->
+  <section id="formularioFiltro">
+    <form class="form-inline">
+      <!-- Search Bar -->
+      <input
+        type="text"
+        name="query"
+        class="form-control"
+        placeholder="Buscar..."
+        [(ngModel)]="searchQuery"
+      />
+
+      <!-- Dropdown Filter -->
+      <label for="filterBy" class="mr-2">Filtrar por:</label>
+      <select
+        name="filterBy"
+        id="filterBy"
+        class="form-control"
+        [(ngModel)]="filterBy"
+      >
+        <option value="todos">Todos</option>
+        <option value="id">ID</option>
+        <option value="nombre">Nombre</option>
+        <option value="raza">Raza</option>
+        <option value="enfermedad">Enfermedad</option>
+        <option value="inactiva">Inactiva</option>
+        <option value="en tratamiento">En tratamiento</option>
+      </select>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary ml-2">Buscar</button>
+    </form>
+  </section>
+
   <section class="client-table">
     <table>
       <thead>
@@ -25,7 +60,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let mascota of mascotasList">
+        <tr *ngFor="let mascota of filteredMascotasList()">
           <td>{{ mascota.id }}</td>
           <td>{{ mascota.nombre }}</td>
           <td>{{ mascota.raza }}</td>
@@ -36,15 +71,15 @@
             <img src="{{ mascota.urlImagen }}" alt="Imagen de Mascota" />
           </td>
           <button
-              [ngClass]="{
-                'btn btn-warning tagEstadoMascotaTratamiento':
+            [ngClass]="{
+              'btn btn-warning tagEstadoMascotaTratamiento':
                 mascota.estado === 'En tratamiento',
-                'btn btn-warning tagEstadoMascotaInactiva':
+              'btn btn-warning tagEstadoMascotaInactiva':
                 mascota.estado === 'Inactiva'
-              }"
-            >
-              {{ mascota.estado }}
-            </button>
+            }"
+          >
+            {{ mascota.estado }}
+          </button>
           <td>
             <button
               type="button"
