@@ -9,6 +9,38 @@
       <!-- Los botones para editar y eliminar clientes se pueden gestionar aquí -->
     </div>
   </div>
+
+  <!-- Filter Form -->
+  <section id="formularioFiltro">
+    <form class="form-inline">
+      <!-- Search Bar -->
+      <input
+        type="text"
+        name="query"
+        class="form-control"
+        placeholder="Buscar..."
+        [(ngModel)]="searchQuery"
+      />
+
+      <!-- Dropdown Filter -->
+      <label for="filterBy" class="mr-2">Filtrar por:</label>
+      <select
+        name="filterBy"
+        id="filterBy"
+        class="form-control"
+        [(ngModel)]="filterBy"
+      >
+        <option value="todos">Todos</option>
+        <option value="nombre">Nombre</option>
+        <option value="id">Cédula</option>
+        <option value="correo">Correo</option>
+        <option value="telefono">Teléfono</option>
+        <option value="inactivo">Inactivo</option>
+        <option value="activo">Activo</option>
+      </select>
+    </form>
+  </section>
+
   <div class="client-table">
     <table>
       <thead>
@@ -23,7 +55,7 @@
       </thead>
       <tbody>
         <!-- Iterar sobre clientes y mostrar en la tabla -->
-        <tr *ngFor="let cliente of clientesList">
+        <tr *ngFor="let cliente of filteredClientesList()">
           <td>{{ cliente.nombre }}</td>
           <td>{{ cliente.cedula }}</td>
           <td>{{ cliente.correo }}</td>

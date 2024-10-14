@@ -16,6 +16,9 @@ export class ClientesTableComponent {
   //BD Lista
   clientesList: Cliente[] = [];
 
+  filterBy: string = 'todos';
+  searchQuery: string = '';
+
 
   //INYECTAR DEPENDENCIAS
   constructor(private router: Router, private route: ActivatedRoute, private clienteService: ClienteService) {}
@@ -30,6 +33,38 @@ export class ClientesTableComponent {
     this.clienteService.findAll().subscribe((clientes) => {
       this.clientesList = clientes;
     })
+  }
+
+  filteredClientesList() {
+    let filteredList = this.clientesList;
+
+    if (this.filterBy !== 'todos') {
+      filteredList = filteredList.filter(cliente => {
+        if (this.filterBy === 'id') {
+          return cliente.cedula.toString() === this.searchQuery;
+        } else if (this.filterBy === 'nombre') {
+          return cliente.nombre.toLowerCase() === this.searchQuery.toLowerCase();
+        } else if (this.filterBy === 'correo') {
+          return cliente.correo.toLowerCase() === this.searchQuery.toLowerCase();
+        } else if (this.filterBy === 'telefono') {
+          return cliente.celular.includes(this.searchQuery);
+        } else if (this.filterBy === 'inactivo') {
+          return cliente.estado === 'Inactivo';
+        } else if (this.filterBy === 'activo') {
+          return cliente.estado === 'Activo';
+        }
+        return true;
+      });
+    } else {
+      filteredList = filteredList.filter(cliente => {
+        return cliente.cedula.toString().includes(this.searchQuery) ||
+               cliente.nombre.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+               cliente.correo.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+               cliente.celular.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    }
+
+    return filteredList;
   }
 
   editarCliente(id: number) {
