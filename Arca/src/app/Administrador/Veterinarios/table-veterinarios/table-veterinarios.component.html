@@ -48,6 +48,7 @@
           <th>Cédula</th>
           <th>Especialidad</th>
           <th>Estado</th>
+          <th>Foto</th>
           <th>Acciones</th>
         </tr>
       </thead>
@@ -57,6 +58,7 @@
           <td>{{ veterinario.nombre }}</td>
           <td>{{ veterinario.cedula }}</td>
           <td>{{ veterinario.especialidad }}</td>
+          
           <td>
             <button
               [ngClass]="{
@@ -68,6 +70,10 @@
             >
               {{ veterinario.estado }}
             </button>
+          </td>
+
+          <td>
+            <img src="{{ veterinario.urlImagen }}" alt="Imagen de veterinario" />
           </td>
           <td>
             <div class="editButtonContainer">

@@ -30,8 +30,12 @@ export class EditVeterinariosComponent {
     // Llamado al API
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.veterinarioService.findById(id).subscribe((veterinario) => {
+
       this.veterinario = veterinario;
+      console.log( "Nombre: " +this.veterinario.nombre);
+      console.log( "Estado: " +this.veterinario.estado);
     })
+    
   }
 
     /*
@@ -42,7 +46,7 @@ export class EditVeterinariosComponent {
     }
 */
     guardarCambios(veterinario: Veterianario) {
-      this.veterinarioService.addVeterinario(this.veterinario).subscribe(
+      this.veterinarioService.addVeterinario(veterinario).subscribe(
         (newVeterinario) => {
           this.router.navigate(['/veterinariosAdmin']); // Navigate back to the table after successful operation
         },
