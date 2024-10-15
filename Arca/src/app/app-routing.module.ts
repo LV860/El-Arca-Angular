@@ -60,7 +60,8 @@ const routes: Routes = [
   { path: 'veterinariosAdmin', component: TableVeterinariosComponent },
   { path: 'veterinariosAddAdmin', component: AddVeterinariosComponent },
   { path: 'veterinariosDetailAdmin/:id', component: EditVeterinariosComponent },
-  { path: 'dashboard', component: UnidadesDrogaComponent }
+  { path: 'mascotasAddTratamiento/:id', component: EditVeterinariosComponent },
+  { path: 'mascotasTratamiento/:id', component: MascotasTratamientoComponent },
 
 
   
