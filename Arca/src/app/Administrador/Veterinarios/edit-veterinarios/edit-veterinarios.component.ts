@@ -32,8 +32,7 @@ export class EditVeterinariosComponent {
     this.veterinarioService.findById(id).subscribe((veterinario) => {
 
       this.veterinario = veterinario;
-      console.log( "Nombre: " +this.veterinario.nombre);
-      console.log( "Estado: " +this.veterinario.estado);
+      
     })
     
   }
@@ -48,6 +47,8 @@ export class EditVeterinariosComponent {
     guardarCambios(veterinario: Veterianario) {
       this.veterinarioService.addVeterinario(veterinario).subscribe(
         (newVeterinario) => {
+          console.log( "Nombre: " +veterinario.nombre);
+          console.log( "Estado: " +veterinario.estado);
           this.router.navigate(['/veterinariosAdmin']); // Navigate back to the table after successful operation
         },
         (error) => {

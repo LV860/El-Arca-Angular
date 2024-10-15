@@ -42,6 +42,7 @@ export class VeterinarioService {
 
 
   addVeterinario(veterinario: Veterianario): Observable<Veterianario> {
+    //console.log(veterinario.estado);
     return this.http.post<Veterianario>('http://localhost:8090/veterinario/add', veterinario).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error('Error:', error);
@@ -53,6 +54,15 @@ export class VeterinarioService {
   deleteById(id: number) {
     console.log(id);
     this.http.delete('http://localhost:8090/veterinario/delete/' + id).subscribe();
+  }
+
+  updateVeterinario(veterinario: Veterianario): Observable<Veterianario> {
+    return this.http.post<Veterianario>(`http://localhost:8090/veterinario/update/${veterinario.id}`, veterinario).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        return throwError(error);
+      })
+    );
   }
 
 }
