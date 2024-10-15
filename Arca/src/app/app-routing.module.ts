@@ -29,6 +29,7 @@ import { TableVeterinariosComponent } from './Administrador/Veterinarios/table-v
 import { AddVeterinariosComponent } from './Administrador/Veterinarios/add-veterinarios/add-veterinarios.component';
 import { EditVeterinariosComponent } from './Administrador/Veterinarios/edit-veterinarios/edit-veterinarios.component';
 import { UnidadesDrogaComponent } from './Administrador/Dashboard/unidades-droga/unidades-droga.component';
+import { MascotasTratamientoComponent } from './Veterinario/mascotas-tratamiento/mascotas-tratamiento.component';
 
 
 const routes: Routes = [
@@ -62,7 +63,7 @@ const routes: Routes = [
   { path: 'veterinariosDetailAdmin/:id', component: EditVeterinariosComponent },
   { path: 'mascotasAddTratamiento/:id', component: EditVeterinariosComponent },
   { path: 'mascotasTratamiento/:id', component: MascotasTratamientoComponent },
-
+  { path: 'dashboard', component: UnidadesDrogaComponent }
 
   
 
