@@ -28,7 +28,7 @@ import { EditClientesComponent } from './Administrador/Clientes/edit-clientes/ed
 import { TableVeterinariosComponent } from './Administrador/Veterinarios/table-veterinarios/table-veterinarios.component';
 import { AddVeterinariosComponent } from './Administrador/Veterinarios/add-veterinarios/add-veterinarios.component';
 import { EditVeterinariosComponent } from './Administrador/Veterinarios/edit-veterinarios/edit-veterinarios.component';
-
+import { MascotasTratamientoComponent } from './Veterinario/mascotas-tratamiento/mascotas-tratamiento.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -58,7 +58,9 @@ const routes: Routes = [
   { path: 'clientesDetailAdmin/:id', component: EditClientesComponent },
   { path: 'veterinariosAdmin', component: TableVeterinariosComponent },
   { path: 'veterinariosAddAdmin', component: AddVeterinariosComponent },
-  { path: 'veterinariosDetailAdmin/:id', component: EditVeterinariosComponent }
+  { path: 'veterinariosDetailAdmin/:id', component: EditVeterinariosComponent },
+  { path: 'mascotasAddTratamiento/:id', component: EditVeterinariosComponent },
+  { path: 'mascotasTratamiento/:id', component: MascotasTratamientoComponent },
 
 
 ];

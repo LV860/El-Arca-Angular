@@ -38,6 +38,7 @@ import { EditMascotasComponent } from './Administrador/Mascotas/edit-mascotas/ed
 import { TableVeterinariosComponent } from './Administrador/Veterinarios/table-veterinarios/table-veterinarios.component';
 import { AddVeterinariosComponent } from './Administrador/Veterinarios/add-veterinarios/add-veterinarios.component';
 import { EditVeterinariosComponent } from './Administrador/Veterinarios/edit-veterinarios/edit-veterinarios.component';
+import { MascotasTratamientoComponent } from './Veterinario/mascotas-tratamiento/mascotas-tratamiento.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { EditVeterinariosComponent } from './Administrador/Veterinarios/edit-vet
     TableVeterinariosComponent,
     AddVeterinariosComponent,
     EditVeterinariosComponent,
+    MascotasTratamientoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],
