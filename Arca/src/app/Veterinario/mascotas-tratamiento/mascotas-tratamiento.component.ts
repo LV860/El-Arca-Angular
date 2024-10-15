@@ -4,6 +4,7 @@ import { Mascota } from 'src/app/interfaces-springboot/Mascota';
 import { Tratamiento } from 'src/app/interfaces-springboot/Tratamiento';
 import { MascotaService } from 'src/app/service/mascota.service';
 import { TratamientoService } from 'src/app/service/tratamiento.service';
+import { VeterinarioService } from 'src/app/service/veterinario.service';
 
 @Component({
   selector: 'app-mascotas-tratamiento',
@@ -13,7 +14,7 @@ import { TratamientoService } from 'src/app/service/tratamiento.service';
 export class MascotasTratamientoComponent  implements OnInit {
  
   //Agregar una mascota a partir del form
-constructor(private mascotaService: MascotaService, private tratamientoService: TratamientoService,private route: ActivatedRoute, private router: Router) {}
+constructor(public veterinarioService: VeterinarioService, private mascotaService: MascotaService, private tratamientoService: TratamientoService,private route: ActivatedRoute, private router: Router) {}
 
   sendTratamiento!: Tratamiento;
 
@@ -33,6 +34,7 @@ constructor(private mascotaService: MascotaService, private tratamientoService: 
     // Llamado al API
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.mascotaService.findById(id).subscribe((mascota) => {
+      this.formTratamiento.veterinarioIdLong = this.veterinarioService.getVeterinarioPerfil().id;
       this.formTratamiento.mascotaIdLong = mascota.id;
     })
   }
@@ -44,6 +46,7 @@ constructor(private mascotaService: MascotaService, private tratamientoService: 
 
 
 addTratamiento(tratamiento: Tratamiento) {
+  
   this.tratamientoService.addTratamiento(tratamiento).subscribe(
     (newTratamiento) => {
       this.router.navigate(['/mascotas']); // Navigate back to the table after successful operation
