@@ -76,6 +76,8 @@ import { MascotasTratamientoComponent } from './Veterinario/mascotas-tratamiento
     TableVeterinariosComponent,
     AddVeterinariosComponent,
     EditVeterinariosComponent,
+    UnidadesDrogaComponent,
+    MascotasTratamientoComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],
