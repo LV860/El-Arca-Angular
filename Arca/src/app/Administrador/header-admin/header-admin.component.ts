@@ -10,25 +10,21 @@ import { AdministradorService } from 'src/app/service/administrador.service';
 })
 export class HeaderAdminComponent {
 
-  admin!: Administrador;
+  constructor(private router: Router, private route: ActivatedRoute, private administradorService: AdministradorService) { }
+
   id!: number;
-
-  constructor(private router: Router, private route: ActivatedRoute, private adminService: AdministradorService) { }
-
   logOut() {
     this.router.navigate(['/']);
   }
 
   ngOnInit(): void {
-    const clienteId = this.route.snapshot.params['id']; // Obtén el ID del cliente de la ruta
-    this.adminService.findById(clienteId).subscribe(cliente => {
-      this.admin = cliente;
-      this.id = this.admin.id; // Ahora puedes acceder al ID
-    });
+    this.id = this.administradorService.getAdministradorPerfil().id;
   }
+
   perfil() {
-    console.log("Id cliente: " + this.id);
-    this.router.navigate(['/', this.id]); // Ajusta según tu lógica de navegación
+    const id = this.administradorService.getAdministradorPerfil().id;
+    console.log("Id veterinario: " +id);
+    this.router.navigate(['/', id]);
   }
 
 }

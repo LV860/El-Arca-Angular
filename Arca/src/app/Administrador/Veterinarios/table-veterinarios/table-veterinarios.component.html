@@ -1,1 +1,93 @@
-<p>table-veterinarios works!</p>
+<app-header-admin></app-header-admin>
+<main>
+  <div class="title-bar">
+    <h1>Información Veterinarios</h1>
+    <div class="buttons-group">
+      <a routerLink="/veterinariosAddAdmin">
+        <button class="btnAzulPortal">Añadir Veterinario</button>
+      </a>
+      <!-- Los botones para editar y eliminar clientes se pueden gestionar aquí -->
+    </div>
+  </div>
+
+  <!-- Filter Form -->
+  <section id="formularioFiltro">
+    <form class="form-inline">
+      <!-- Search Bar -->
+      <input
+        type="text"
+        name="query"
+        class="form-control"
+        placeholder="Buscar..."
+        [(ngModel)]="searchQuery"
+      />
+
+      <!-- Dropdown Filter -->
+      <label for="filterBy" class="mr-2">Filtrar por:</label>
+      <select
+        name="filterBy"
+        id="filterBy"
+        class="form-control"
+        [(ngModel)]="filterBy"
+      >
+        <option value="todos">Todos</option>
+        <option value="nombre">Nombre</option>
+        <option value="cedula">Cédula</option>
+        <option value="especialidad">Especialidad</option>
+        <option value="inactivo">Inactivo</option>
+        <option value="activo">Activo</option>
+      </select>
+    </form>
+  </section>
+
+  <div class="client-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cédula</th>
+          <th>Especialidad</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterar sobre clientes y mostrar en la tabla -->
+        <tr *ngFor="let veterinario of filteredVeterinariosList()">
+          <td>{{ veterinario.nombre }}</td>
+          <td>{{ veterinario.cedula }}</td>
+          <td>{{ veterinario.especialidad }}</td>
+          <td>
+            <button
+              [ngClass]="{
+                'btn btn-warning tagEstadoPerfilActivo':
+                veterinario.estado === 'Activo',
+                'btn btn-warning tagEstadoPerfilInactivo':
+                veterinario.estado === 'Inactivo'
+              }"
+            >
+              {{ veterinario.estado }}
+            </button>
+          </td>
+          <td>
+            <div class="editButtonContainer">
+              <a
+                type="button"
+                class="btn btn-warning"
+                (click)="editarVeterinario(veterinario.id)"
+                >Editar</a
+              >
+              <a
+                type="button"
+                class="btn btn-danger"
+                (click)="eliminarVeterinario(veterinario)"
+              >
+                Eliminar
+              </a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

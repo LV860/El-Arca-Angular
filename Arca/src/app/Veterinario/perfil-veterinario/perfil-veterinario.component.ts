@@ -17,6 +17,7 @@ export class PerfilVeterinarioComponent {
     cedula: '',
     contrasena: '',
     especialidad: '',
+    estado: '',
     urlImagen: '',
     nombre: '',
     tratamientos: [] as Tratamiento[] 

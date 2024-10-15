@@ -5,6 +5,7 @@ export interface Veterianario{
     cedula: string;
     contrasena: string;
     especialidad: string;
+    estado: string;
     urlImagen: string;
     nombre: string;
     tratamientos: Tratamiento[];

@@ -23,6 +23,7 @@ export class InicioVeterinarioComponent {
     cedula: '',
     contrasena: '',
     especialidad: '',
+    estado: '',
     urlImagen: '',
     nombre: '',
     tratamientos: [] as Tratamiento[] 

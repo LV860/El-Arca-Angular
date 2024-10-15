@@ -19,6 +19,15 @@ import { HeaderClienteComponent } from './Cliente/header-cliente/header-cliente.
 import { PerfilClienteComponent } from './Cliente/perfil-cliente/perfil-cliente.component';
 import { PerfilAdmiComponent } from './Administrador/perfil-admi/perfil-admi.component';
 import { InicioAdmiComponent } from './landingPage/inicio-admi/inicio-admi.component';
+import { TableMascotasComponent } from './Administrador/Mascotas/table-mascotas/table-mascotas.component';
+import { AddMascotasComponent } from './Administrador/Mascotas/add-mascotas/add-mascotas.component';
+import { EditMascotasComponent } from './Administrador/Mascotas/edit-mascotas/edit-mascotas.component';
+import { TableClientesComponent } from './Administrador/Clientes/table-clientes/table-clientes.component';
+import { AddClientesComponent } from './Administrador/Clientes/add-clientes/add-clientes.component';
+import { EditClientesComponent } from './Administrador/Clientes/edit-clientes/edit-clientes.component';
+import { TableVeterinariosComponent } from './Administrador/Veterinarios/table-veterinarios/table-veterinarios.component';
+import { AddVeterinariosComponent } from './Administrador/Veterinarios/add-veterinarios/add-veterinarios.component';
+import { EditVeterinariosComponent } from './Administrador/Veterinarios/edit-veterinarios/edit-veterinarios.component';
 
 
 const routes: Routes = [
@@ -40,8 +49,18 @@ const routes: Routes = [
   { path: 'headerCliente', component: HeaderClienteComponent },
   { path: 'perfilCliente/:cedula', component: PerfilClienteComponent },
   { path: 'perfilAdmin/:id', component: PerfilAdmiComponent },
-  { path: 'loginAdmin', component: InicioAdmiComponent }
-  
+  { path: 'loginAdmin', component: InicioAdmiComponent },
+  { path: 'mascotasAdmin', component: TableMascotasComponent },
+  { path: 'mascotasAddAdmin', component: AddMascotasComponent },
+  { path: 'mascotasDetailAdmin/:id', component: EditMascotasComponent },
+  { path: 'clientesAdmin', component: TableClientesComponent },
+  { path: 'clientesAddAdmin', component: AddClientesComponent },
+  { path: 'clientesDetailAdmin/:id', component: EditClientesComponent },
+  { path: 'veterinariosAdmin', component: TableVeterinariosComponent },
+  { path: 'veterinariosAddAdmin', component: AddVeterinariosComponent },
+  { path: 'veterinariosDetailAdmin/:id', component: EditVeterinariosComponent }
+
+
 ];
 
 @NgModule({

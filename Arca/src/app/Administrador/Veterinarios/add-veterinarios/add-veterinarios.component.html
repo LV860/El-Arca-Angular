@@ -1,1 +1,65 @@
-<p>add-veterinarios works!</p>
+<app-header-admin></app-header-admin>
+<main>
+  <div class="add-client-form">
+    <h1>Añadir Veterinario</h1>
+    <form (ngSubmit)="addVeterinario(veterinario)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="veterinario.nombre"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="cedula">Cédula</label>
+          <input
+            type="number"
+            id="cedula"
+            name="cedula"
+            [(ngModel)]="veterinario.cedula"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="correo">Especialidad</label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            [(ngModel)]="veterinario.especialidad"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <input
+            type="tel"
+            id="contrasena"
+            name="contrasena"
+            [(ngModel)]="veterinario.contrasena"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-row">
+            <div class="form-group">
+              <label for="urlImagen">Url Imagen:</label>
+              <input
+                type="text"
+                id="urlImagen"
+                name="urlImagen"
+                [(ngModel)]="veterinario.urlImagen"
+                required
+              />
+            </div>
+        </div>
+      <button type="submit" class="btnSubmit">Añadir</button>
+    </form>
+  </div>
+</main>

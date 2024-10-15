@@ -1,1 +1,73 @@
-<p>edit-veterinarios works!</p>
+<app-header-admin></app-header-admin>
+<main>
+    <div class="edit-client-form">
+        <h1>Editar Veterinario</h1>
+        <form (ngSubmit)="guardarCambios(veterinario)">
+        <div class="form-row">
+            <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                [(ngModel)]="veterinario.nombre"
+                required
+            />
+            </div>
+            <div class="form-group">
+            <label for="cedula">Cédula:</label>
+            <input
+                type="text"
+                id="cedula"
+                name="cedula"
+                [(ngModel)]="veterinario.cedula"
+                
+                readonly
+            />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+            <label for="correo">Especialidad:</label>
+            <input
+                type="email"
+                id="correo"
+                name="correo"
+                [(ngModel)]="veterinario.especialidad"
+                
+                required
+            />
+            </div>
+            <div class="form-group">
+                <label for="urlImagen">Url Imagen:</label>
+                <input
+                  type="text"
+                  id="urlImagen"
+                  name="urlImagen"
+                  [(ngModel)]="veterinario.urlImagen"
+                  required
+                />
+              </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <select
+                  name="estado"
+                  id="estado"
+                  class="form-control"
+                  [(ngModel)]="veterinario.estado"
+                >
+                  <option value="En tratamiento">Activo</option>
+                  <option value="Inactiva">Inactivo</option>
+                </select>
+              </div>
+            
+        </div>
+        <button type="submit" class="btnSubmit" >Guardar Cambios</button>
+        </form>
+    </div>
+</main>
+
+
+

@@ -40,7 +40,7 @@ export class ClientesTableComponent {
 
     if (this.filterBy !== 'todos') {
       filteredList = filteredList.filter(cliente => {
-        if (this.filterBy === 'id') {
+        if (this.filterBy === 'cedula') {
           return cliente.cedula.toString() === this.searchQuery;
         } else if (this.filterBy === 'nombre') {
           return cliente.nombre.toLowerCase() === this.searchQuery.toLowerCase();

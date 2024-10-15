@@ -1,1 +1,53 @@
-<p>add-clientes works!</p>
+<app-header-admin></app-header-admin>
+<main>
+  <div class="add-client-form">
+    <h1>Añadir Cliente</h1>
+    <form (ngSubmit)="addCliente(formCliente)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="formCliente.nombre"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="cedula">Cédula</label>
+          <input
+            type="number"
+            id="cedula"
+            name="cedula"
+            [(ngModel)]="formCliente.cedula"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            [(ngModel)]="formCliente.correo"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="celular">Número de Teléfono</label>
+          <input
+            type="tel"
+            id="celular"
+            name="celular"
+            [(ngModel)]="formCliente.celular"
+            required
+          />
+        </div>
+      </div>
+      <button type="submit" class="btnSubmit">Añadir</button>
+    </form>
+  </div>
+</main>
