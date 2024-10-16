@@ -4,7 +4,10 @@
   <div class="profile-section">
     <div class="profile-details">
       <div class="image-emailName">
-        <img src="assets/images/fotoPerfil_PorDefecto.jpg" alt="Foto de Perfil" />
+        <img
+          src="assets/images/fotoPerfil_PorDefecto.jpg"
+          alt="Foto de Perfil"
+        />
         <div class="name-email">
           <span id="nameSpan">{{ cliente.nombre }}</span>
           <span id="emailSpan">{{ cliente.correo }}</span>
@@ -14,10 +17,13 @@
       <div class="info-card">
         <p>
           <span class="label">Estado:</span>
-          <span class="value" [ngClass]="{
-              'tagEstadoPerfilActivo': cliente.estado === 'Activo',
-              'tagEstadoPerfilInactivo': cliente.estado === 'Inactivo'
-            }">
+          <span
+            class="value"
+            [ngClass]="{
+              tagEstadoPerfilActivo: cliente.estado === 'Activo',
+              tagEstadoPerfilInactivo: cliente.estado === 'Inactivo'
+            }"
+          >
             {{ cliente.estado }}
           </span>
         </p>
@@ -50,15 +56,16 @@
               <span
                 class="value"
                 [ngClass]="{
-                  'tagEstadoMascotaTratamiento': mascota.estado === 'En tratamiento',
-                  'tagEstadoMascotaInactiva': mascota.estado === 'Inactiva'
+                  tagEstadoMascotaTratamiento:
+                    mascota.estado === 'En tratamiento',
+                  tagEstadoMascotaInactiva: mascota.estado === 'Inactiva'
                 }"
               >
                 {{ mascota.estado }}
               </span>
             </p>
           </div>
-  
+
           <p>
             <strong>Raza:</strong> <span>{{ mascota.raza }}</span>
           </p>
@@ -73,9 +80,12 @@
               <strong>Peso:</strong> <span>{{ mascota.peso }}</span>
             </p>
           </div>
+
+          <a routerLink="/mascotasEdit/{{ mascota.id }}">
+            <button class="btn btn-outline-secondary">Tratamientos</button>
+          </a>
         </div>
       </div>
     </div>
   </div>
-
 </main>
