@@ -80,12 +80,21 @@
               <strong>Peso:</strong> <span>{{ mascota.peso }}</span>
             </p>
           </div>
-
-          <a routerLink="/mascotasEdit/{{ mascota.id }}">
-            <button class="btn btn-outline-secondary">Tratamientos</button>
-          </a>
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="mostrarTratamientos(mascota.id)"
+          >
+            Tratamientos
+          </button>
         </div>
       </div>
+      <!-- COMPONENTE AQUI -->
     </div>
   </div>
+  <ng-container *ngIf="tratamientosList.length > 0">
+    <app-tratamientos-table
+      [mascotaId]="selectedMascotaId"
+    ></app-tratamientos-table>
+  </ng-container>
 </main>

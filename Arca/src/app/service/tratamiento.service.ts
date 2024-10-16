@@ -22,5 +22,14 @@ export class TratamientoService {
       })
     );
   }
+
+  getTratamientosByMascotaId(mascotaId: number): Observable<Tratamiento[]> {
+    return this.http.get<Tratamiento[]>(`http://localhost:8090/tratamiento/findByMascotaId/${mascotaId}`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error al obtener las mascotas:', error);
+        return throwError(error);
+      })
+    );
+  }
   
 }

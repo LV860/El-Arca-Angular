@@ -4,6 +4,8 @@ import { ClienteService } from 'src/app/service/cliente.service';
 import { Cliente } from 'src/app/interfaces-springboot/Cliente';
 import { Mascota } from 'src/app/interfaces-springboot/Mascota';
 import { MascotaService } from 'src/app/service/mascota.service';
+import { Tratamiento } from 'src/app/interfaces-springboot/Tratamiento';
+import { TratamientoService } from 'src/app/service/tratamiento.service';
 
 @Component({
   selector: 'app-perfil-cliente',
@@ -23,7 +25,12 @@ export class PerfilClienteComponent implements OnInit{
     mascotas: [] // Asegúrate de incluir mascotas si se necesita en el futuro
   };
 
+  selectedMascotaId: number | null = null;
+  //BD Lista
+  tratamientosList: Tratamiento[] = [];
+
   constructor(
+    private tratamientoService : TratamientoService,
     private clienteService: ClienteService,
     private route: ActivatedRoute // Agregamos ActivatedRoute para obtener parámetros de la ruta
   ) {}
@@ -39,5 +46,14 @@ export class PerfilClienteComponent implements OnInit{
       }
     );
   }
+
+  mostrarTratamientos(mascotaId: number) {
+    this.selectedMascotaId = mascotaId;
+    this.tratamientoService.getTratamientosByMascotaId(mascotaId).subscribe((tratamientos) => {
+      this.tratamientosList = tratamientos;
+    });
+  }
+
+
 
 }
