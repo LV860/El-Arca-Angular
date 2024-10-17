@@ -89,12 +89,13 @@
           </button>
         </div>
       </div>
-      <!-- COMPONENTE AQUI -->
     </div>
   </div>
-  <ng-container *ngIf="tratamientosList.length > 0">
-    <app-tratamientos-table
-      [mascotaId]="selectedMascotaId"
-    ></app-tratamientos-table>
-  </ng-container>
+  <div class="contenedorBajo">
+    <ng-container *ngIf="tratamientosList.length > 0">
+      <app-tratamientos-table
+        [mascotaId]="selectedMascotaId"
+      ></app-tratamientos-table>
+    </ng-container>
+  </div>
 </main>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tratamiento } from 'src/app/interfaces-springboot/Tratamiento';
 import { TratamientoService } from 'src/app/service/tratamiento.service';
@@ -22,10 +22,16 @@ export class TratamientosTableComponent {
     //BD Lista
     tratamientosList: Tratamiento[] = [];
 
-    tratamientosTable() {
-      this.tratamientoService.getTratamientosByMascotaId(this.mascotaId!).subscribe((tratamientos) => {
+    ngOnChanges(changes: SimpleChanges): void {
+      if (changes['mascotaId'] && this.mascotaId !== null) {
+        this.fetchTratamientos(this.mascotaId);
+      }
+    }
+  
+    fetchTratamientos(mascotaId: number) {
+      this.tratamientoService.getTratamientosByMascotaId(mascotaId).subscribe((tratamientos) => {
         this.tratamientosList = tratamientos;
-      })
+      });
     }
 
 

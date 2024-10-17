@@ -51,9 +51,7 @@ export class PerfilClienteComponent implements OnInit{
     this.selectedMascotaId = mascotaId;
     this.tratamientoService.getTratamientosByMascotaId(mascotaId).subscribe((tratamientos) => {
       this.tratamientosList = tratamientos;
+      console.log(this.tratamientosList);
     });
   }
-
-
-
 }

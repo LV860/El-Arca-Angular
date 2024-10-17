@@ -5,6 +5,18 @@ main {
     justify-content: center;
     padding: 20px;
   }
+
+  
+  .contenedorBajo {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* Optional: Add background color */
+    padding: 10px; /* Optional: Add padding */
+  }
   
   body {
     font-family: "Manrope", sans-serif;
