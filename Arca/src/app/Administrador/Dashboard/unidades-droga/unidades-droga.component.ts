@@ -9,6 +9,8 @@ import { DashboardService } from 'src/app/service/dashboard.service';
   styleUrls: ['./unidades-droga.component.css']
 })
 export class UnidadesDrogaComponent {
+
+  id: number = 1;
   unidadesVendidas: number = 0;
   unidadesDisponibles: number = 0;
 
@@ -18,19 +20,38 @@ export class UnidadesDrogaComponent {
   constructor(private router: Router, private route: ActivatedRoute, private dashboardService: DashboardService) {}
 
   ngOnInit(): void {
-    this.dashboardService.findUnidadesVendidasById(11).subscribe((unidades) => {
+    this.dashboardService.findUnidadesVendidasById(this.id).subscribe((unidades) => {
       this.unidadesVendidas = unidades;
       this.updateChartData(); // Actualiza los datos del gráfico
     });
 
-    this.dashboardService.findUnidadesDisponiblesById(11).subscribe((unidades) => {
+    this.dashboardService.findUnidadesDisponiblesById(this.id).subscribe((unidades) => {
       this.unidadesDisponibles = unidades;
       this.updateChartData(); // Actualiza los datos del gráfico
     });
   }
 
+
+
   private updateChartData(): void {
     this.barChartData = [this.unidadesVendidas, this.unidadesDisponibles];
     console.log(this.barChartData); // Para verificar los valores actualizados
   }
+
+
+  public onSubmit(): void {
+    this.dashboardService.findUnidadesVendidasById(this.id).subscribe((unidades) => {
+      this.unidadesVendidas = unidades;
+      this.updateChartData(); // Actualiza los datos del gráfico
+    });
+
+    this.dashboardService.findUnidadesDisponiblesById(this.id).subscribe((unidades) => {
+      this.unidadesDisponibles = unidades;
+      this.updateChartData(); // Actualiza los datos del gráfico
+    });
+    
+  }
+
+
+
 }

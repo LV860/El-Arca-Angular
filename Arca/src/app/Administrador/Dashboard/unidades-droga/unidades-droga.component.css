@@ -1,0 +1,58 @@
+/* Estilo general del formulario */
+form {
+    display: flex;
+    flex-direction: column; /* Para apilar los elementos verticalmente */
+    margin: 20px; /* Espacio alrededor del formulario */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo suave */
+}
+
+/* Estilo de las etiquetas */
+label {
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+    font-weight: bold; /* Hacer las etiquetas más visibles */
+}
+
+/* Estilo del campo de entrada */
+input[type="text"] {
+    padding: 10px; /* Espacio interno del campo de entrada */
+    margin-bottom: 10px; /* Espacio debajo del campo de entrada */
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilo del botón */
+button {
+    padding: 10px 15px; /* Espacio interno del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #28a745; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+/* Estilo del botón al pasar el mouse */
+button:hover {
+    background-color: #218838; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilo para el SVG */
+svg {
+    margin-top: 20px; /* Espacio superior */
+    border: 1px solid #ccc; /* Borde del SVG */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #fff; /* Fondo blanco */
+    display: block; /* Para centrar el SVG en el contenedor */
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+/* Estilo de texto dentro del SVG */
+text {
+    font-size: 14px; /* Tamaño de fuente */
+}

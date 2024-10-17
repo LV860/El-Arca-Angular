@@ -1,5 +1,11 @@
-<app-header-admin></app-header-admin>
-<svg width="400" height="300">
+<app-header-admin></app-header-admin> 
+
+<form (ngSubmit)="onSubmit()">
+    <label for="query">Id de la droga:</label>
+    <input type="text" id="query" [(ngModel)]="id" name="query" required />
+    <button type="submit">Consultar</button>
+</form>
+<svg width="400" height="400"> <!-- Aumentar la altura a 400 para más espacio -->
     <g *ngFor="let value of barChartData; let i = index">
       <rect
         [attr.x]="i * 100 + 50"  
@@ -10,10 +16,10 @@
       </rect>
       <text
         [attr.x]="i * 100 + 90"
-        [attr.y]="300 - value * 10 - 5"
+        [attr.y]="300 - value * 10 - 20" 
         text-anchor="middle"
         fill="black">{{ value }}</text>
     </g>
-    <text x="50" y="290" fill="black">Unidades Vendidas</text>
-    <text x="150" y="290" fill="black">Unidades Disponibles</text>
+    <text x="50" y="340" fill="black">Unidades Vendidas</text> <!-- Aumentar 'y' para más separación -->
+    <text x="150" y="340" fill="black">Unidades Disponibles</text> <!-- Aumentar 'y' para más separación -->
 </svg>
