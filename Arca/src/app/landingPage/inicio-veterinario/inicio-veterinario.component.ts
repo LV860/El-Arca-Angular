@@ -41,24 +41,31 @@ export class InicioVeterinarioComponent {
   }
 
   iniciarSesion() {
-
-    this.veterinarioService.findByCedula(this.cedula).subscribe((veterinario) => {
-      //console.log('Veterinario obtenido:', veterinario);
-      this.veterinarioValido = veterinario;
+    this.veterinarioService.findByCedula(this.cedula).subscribe(
+      (veterinario) => {
+        if (veterinario) {
+          this.veterinarioValido = veterinario;
   
-      // Verifica si la cedula y la contraseña son válidos después de obtener la respuesta
-      if (this.veterinarioValido.cedula === this.cedula && this.veterinarioValido.contrasena === this.contra) {
-        this.veterinarioService.setVeterinarioPerfil(this.veterinarioValido);
-        this.router.navigate(['/perfilVeterinario', this.veterinarioValido.cedula]); // Redirigir a la página del veterinario si las credenciales son correctas
-      } else {
-        this.error = true; // Muestra el mensaje de error si las credenciales son incorrectas
-        console.log('Veterinario no existe', veterinario);
+          // Verifica si la cedula y la contraseña son válidos
+          if (this.veterinarioValido.cedula === this.cedula && this.veterinarioValido.contrasena === this.contra) {
+            this.veterinarioService.setVeterinarioPerfil(this.veterinarioValido);
+            this.router.navigate(['/perfilVeterinario', this.veterinarioValido.cedula]);
+          } else {
+            this.error = true; // Muestra el mensaje de error si las credenciales son incorrectas
+            console.log('La cédula o la contraseña son incorrectas', this.error);
+          }
+        } else {
+          this.error = true; // Muestra el mensaje de error si no se encuentra el veterinario
+          console.log('Veterinario no encontrado');
+        }
+      },
+      (error) => {
+        console.error('Error al buscar veterinario:', error);
+        this.error = true; // Muestra un mensaje de error si la búsqueda falla
       }
-    }, (error) => {
-      console.error('Error al buscar veterinario:', error);
-      this.error = true; // Muestra un mensaje de error si la búsqueda falla
-    });
+    );
   }
+  
 
   
   
