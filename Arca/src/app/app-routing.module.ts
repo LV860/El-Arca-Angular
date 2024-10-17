@@ -32,6 +32,7 @@ import { UnidadesDrogaComponent } from './Administrador/Dashboard/unidades-droga
 import { MascotasTratamientoComponent } from './Veterinario/mascotas-tratamiento/mascotas-tratamiento.component';
 import { TratamientosTableComponent } from './Cliente/tratamientos-table/tratamientos-table.component';
 import { MainDashboardComponent } from './Administrador/Dashboard/main-dashboard/main-dashboard.component';
+import { MascotasHistorialComponent } from './Veterinario/mascotas-historial/mascotas-historial.component';
 
 
 const routes: Routes = [
@@ -67,6 +68,8 @@ const routes: Routes = [
   { path: 'mascotasTratamiento/:id', component: MascotasTratamientoComponent },
   { path: 'dashboard', component: MainDashboardComponent },
   { path: 'tratamientosMascota/:id', component: TratamientosTableComponent },
+  { path: 'mascotaHistorial/:id', component: MascotasHistorialComponent },
+
 
 
   

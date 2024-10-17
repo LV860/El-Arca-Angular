@@ -33,6 +33,7 @@ constructor(public veterinarioService: VeterinarioService, private mascotaServic
     console.log('ngOnInit de tratamiento');
     // Llamado al API
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(id);
     this.mascotaService.findById(id).subscribe((mascota) => {
       this.formTratamiento.veterinarioIdLong = this.veterinarioService.getVeterinarioPerfil().id;
       this.formTratamiento.mascotaIdLong = mascota.id;
@@ -40,6 +41,10 @@ constructor(public veterinarioService: VeterinarioService, private mascotaServic
   }
 
 
+  historialMascota() {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.router.navigate(['mascotaHistorial', id]);
+  }
 
 
 

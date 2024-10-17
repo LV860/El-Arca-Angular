@@ -45,6 +45,7 @@ import { TotalTratamientosComponent } from './Administrador/Dashboard/total-trat
 import { MainDashboardComponent } from './Administrador/Dashboard/main-dashboard/main-dashboard.component';
 import { CantidadesTotalesComponent } from './Administrador/Dashboard/cantidades-totales/cantidades-totales.component';
 import { VentasGananciasComponent } from './Administrador/Dashboard/ventas-ganancias/ventas-ganancias.component';
+import { MascotasHistorialComponent } from './Veterinario/mascotas-historial/mascotas-historial.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { VentasGananciasComponent } from './Administrador/Dashboard/ventas-ganan
     TotalTratamientosComponent,
     MainDashboardComponent,
     CantidadesTotalesComponent,
-    VentasGananciasComponent
+    VentasGananciasComponent,
+    MascotasHistorialComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],

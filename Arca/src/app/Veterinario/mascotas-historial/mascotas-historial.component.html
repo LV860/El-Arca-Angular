@@ -1,0 +1,27 @@
+<main>
+    <section class="client-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Id Mascota</th>
+            <th>Id Veterinario</th>
+            <th>Id Droga</th>
+            <th>Precio</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tratamiento of tratamientosList">
+            <td>{{ tratamiento.id }}</td>
+            <td>{{ tratamiento.mascotaIdLong }}</td>
+            <td>{{ tratamiento.veterinarioIdLong }}</td>
+            <td>{{ tratamiento.drogaIdLong }}</td>
+            <td>{{ tratamiento.precio }}</td>
+            <td>{{ tratamiento.fecha }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  

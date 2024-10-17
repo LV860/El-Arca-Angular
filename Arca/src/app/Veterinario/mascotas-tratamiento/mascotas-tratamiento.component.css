@@ -80,3 +80,17 @@ body {
     width: 100%;
     margin-top: 20px;
   }
+
+  .btnSubmit2 {
+    background-color: rgb(3, 186, 242);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
