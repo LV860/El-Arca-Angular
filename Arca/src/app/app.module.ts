@@ -41,6 +41,10 @@ import { EditVeterinariosComponent } from './Administrador/Veterinarios/edit-vet
 import { UnidadesDrogaComponent } from './Administrador/Dashboard/unidades-droga/unidades-droga.component';
 import { MascotasTratamientoComponent } from './Veterinario/mascotas-tratamiento/mascotas-tratamiento.component';
 import { TratamientosTableComponent } from './Cliente/tratamientos-table/tratamientos-table.component';
+import { TotalTratamientosComponent } from './Administrador/Dashboard/total-tratamientos/total-tratamientos.component';
+import { MainDashboardComponent } from './Administrador/Dashboard/main-dashboard/main-dashboard.component';
+import { CantidadesTotalesComponent } from './Administrador/Dashboard/cantidades-totales/cantidades-totales.component';
+import { VentasGananciasComponent } from './Administrador/Dashboard/ventas-ganancias/ventas-ganancias.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +83,11 @@ import { TratamientosTableComponent } from './Cliente/tratamientos-table/tratami
     EditVeterinariosComponent,
     UnidadesDrogaComponent,
     MascotasTratamientoComponent,
-    TratamientosTableComponent
+    TratamientosTableComponent,
+    TotalTratamientosComponent,
+    MainDashboardComponent,
+    CantidadesTotalesComponent,
+    VentasGananciasComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],

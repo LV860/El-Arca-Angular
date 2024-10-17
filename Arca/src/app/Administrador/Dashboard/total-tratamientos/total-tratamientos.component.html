@@ -1,0 +1,23 @@
+<div class="total-container">
+    <div class="total-title">Cantidad total de tratamientos administrados en el último mes</div>
+    <div class="total-value">&#8594; {{ totalTratamientos | number }}</div>
+</div>
+
+<div class="total-container">
+    <div class="total-title">Cantidad de Tratamientos por Tipo de Medicamento (Último Mes)</div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Medicamento</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tratamiento of tratamientos | keyvalue">
+                <td>{{ tratamiento.key }}</td>   <!-- Aquí se utiliza tratamiento.key para el nombre del medicamento -->
+                <td>{{ tratamiento.value }}</td> <!-- Aquí se utiliza tratamiento.value para la cantidad -->
+            </tr>
+        </tbody>
+    </table>
+</div>

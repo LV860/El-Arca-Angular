@@ -1,0 +1,29 @@
+.total-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+.total-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.total-value {
+    font-size: 20px;
+    color: #ff4242; /* Color azul */
+}
+
+
+/* Estilo para el título H2 */
+h2 {
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+    color: #333; /* Color del texto */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 20px; /* Espacio inferior */
+}

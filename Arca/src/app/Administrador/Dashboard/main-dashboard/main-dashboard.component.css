@@ -1,0 +1,67 @@
+.fila {
+    display: flex; 
+    justify-content: space-around; 
+    margin: 20px 0; 
+}
+
+.grafico-container {
+    border: 1px solid #ccc; 
+    border-radius: 12px; /* Bordes más redondeados */
+    padding: 20px; 
+    width: 45%; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más profunda */
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+h2 {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+    color: #333; /* Color de texto oscuro */
+}
+
+input {
+    width: 100%; /* Ancho completo */
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-bottom: 10px; /* Espacio debajo del input */
+    transition: border-color 0.3s; /* Suavizar el cambio de borde */
+}
+
+input:focus {
+    border-color: #4CAF50; /* Color verde al enfocar */
+    outline: none; /* Eliminar el contorno predeterminado */
+}
+
+button {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; /* Suavizar el cambio de color */
+}
+
+button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
+
+h1 {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente */
+    font-size: 2.2em; /* Tamaño de la fuente más ajustado */
+    color: #333; /* Color de texto oscuro */
+    text-align: center; /* Alineación del texto */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    padding: 15px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+h1:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra más profunda al pasar el ratón */
+}

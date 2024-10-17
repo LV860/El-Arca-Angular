@@ -1,0 +1,33 @@
+
+
+<div class="total-container">
+    <div class="total-title">Ventas totales de la veterinaria</div>
+    <div class="total-value">$ {{ totalVentas | number }}</div>
+</div>
+
+
+<div class="total-container">
+    <div class="total-title">Ganancias totales de la veterinaria</div>
+    <div class="total-value">$ {{ totalGanancias | number }}</div>
+</div>
+
+
+<div class="total-container">
+    <div class="total-title">Top 3 tratamientos con más unidades vendidas</div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID tratamiento</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tratamiento of tratamientos">
+                <td>{{ tratamiento.id }}</td>
+                <td>{{ tratamiento.precio }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
