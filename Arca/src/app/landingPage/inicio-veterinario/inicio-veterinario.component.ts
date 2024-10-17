@@ -43,7 +43,7 @@ export class InicioVeterinarioComponent {
   iniciarSesion() {
 
     this.veterinarioService.findByCedula(this.cedula).subscribe((veterinario) => {
-      console.log('Veterinario obtenido:', veterinario);
+      //console.log('Veterinario obtenido:', veterinario);
       this.veterinarioValido = veterinario;
   
       // Verifica si la cedula y la contraseña son válidos después de obtener la respuesta
@@ -52,6 +52,7 @@ export class InicioVeterinarioComponent {
         this.router.navigate(['/perfilVeterinario', this.veterinarioValido.cedula]); // Redirigir a la página del veterinario si las credenciales son correctas
       } else {
         this.error = true; // Muestra el mensaje de error si las credenciales son incorrectas
+        console.log('Veterinario no existe', veterinario);
       }
     }, (error) => {
       console.error('Error al buscar veterinario:', error);
