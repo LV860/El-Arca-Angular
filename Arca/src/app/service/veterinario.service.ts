@@ -40,6 +40,10 @@ export class VeterinarioService {
     return this.http.get<Veterianario>('http://localhost:8090/veterinario/find/' + id)
   }
 
+  findByCedula(cedula: String): Observable<Veterianario>{
+    return this.http.get<Veterianario>('http://localhost:8090/veterinario/findCedula/' + cedula)
+  }
+
 
   addVeterinario(veterinario: Veterianario): Observable<Veterianario> {
     //console.log(veterinario.estado);

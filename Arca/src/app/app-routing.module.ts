@@ -47,7 +47,7 @@ const routes: Routes = [
   { path: 'clientes', component: ClientesTableComponent },
   { path: 'clientesAdd', component: ClientesAddComponent },
   { path: 'clientesDetail/:id', component: ClientesEditComponent},
-  { path: 'perfilVeterinario/:id', component: PerfilVeterinarioComponent},
+  { path: 'perfilVeterinario/:cedula', component: PerfilVeterinarioComponent},
   { path: 'mascotasCliente', component: MascotasClienteComponent },
   { path: 'headerCliente', component: HeaderClienteComponent },
   { path: 'perfilCliente/:cedula', component: PerfilClienteComponent },

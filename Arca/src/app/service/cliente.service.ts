@@ -73,8 +73,6 @@ export class ClienteService {
   
    // Obtener un cliente por su cédula
   findByCedula(cedula: number): Observable<Cliente> {
-    //return this.http.get<Cliente>('http://localhost:8090/dueño/find?cedula=' + cedula);
-    //return this.http.get<Cliente>('http://localhost:8090/dueño/perfilCliente?cedula=' + cedula);
     return this.http.get<Cliente>('http://localhost:8090/clientes/findCedula/' + cedula);
   }
 

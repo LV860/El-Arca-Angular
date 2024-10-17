@@ -12,6 +12,7 @@ import { VeterinarioService } from 'src/app/service/veterinario.service';
 export class InicioVeterinarioComponent {
 
   id!: number; // Para almacenar el ID del usuario
+  cedula!: string;
   contra!: string; // Para almacenar la contraseña
   error: boolean = false; // Para mostrar mensajes de error
 
@@ -41,22 +42,14 @@ export class InicioVeterinarioComponent {
 
   iniciarSesion() {
 
-    /*
-    this.listaVeterinarios();
-
-    // Verificar si el ID y la contraseña son válidos
-    const veterinarioValido = this.veterinariosList.find(veterinario => 
-      veterinario.id === this.id && veterinario.contrasena === this.contra // Asegúrate de que la propiedad de contraseña sea correcta
-    );
-
-    */
-    this.veterinarioService.findById(this.id).subscribe((veterinario) => {
+    this.veterinarioService.findByCedula(this.cedula).subscribe((veterinario) => {
+      console.log('Veterinario obtenido:', veterinario);
       this.veterinarioValido = veterinario;
   
-      // Verifica si el ID y la contraseña son válidos después de obtener la respuesta
-      if (this.veterinarioValido.id === this.id && this.veterinarioValido.contrasena === this.contra) {
+      // Verifica si la cedula y la contraseña son válidos después de obtener la respuesta
+      if (this.veterinarioValido.cedula === this.cedula && this.veterinarioValido.contrasena === this.contra) {
         this.veterinarioService.setVeterinarioPerfil(this.veterinarioValido);
-        this.router.navigate(['/perfilVeterinario', this.veterinarioValido.id]); // Redirigir a la página del veterinario si las credenciales son correctas
+        this.router.navigate(['/perfilVeterinario', this.veterinarioValido.cedula]); // Redirigir a la página del veterinario si las credenciales son correctas
       } else {
         this.error = true; // Muestra el mensaje de error si las credenciales son incorrectas
       }

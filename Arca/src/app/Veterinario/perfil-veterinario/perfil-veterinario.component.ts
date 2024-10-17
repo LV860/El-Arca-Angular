@@ -28,8 +28,9 @@ export class PerfilVeterinarioComponent {
 
   ngOnInit(): void {
 
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.veterinarioService.findById(id).subscribe((vet) => {
+    const cedula = String(this.route.snapshot.paramMap.get('cedula'));
+    console.log('Cédula desde el perfil:', cedula);
+    this.veterinarioService.findByCedula(cedula).subscribe((vet) => {
       this.veterinario = vet;
     })
 
