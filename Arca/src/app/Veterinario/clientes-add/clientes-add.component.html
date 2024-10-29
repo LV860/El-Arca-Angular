@@ -2,7 +2,7 @@
 <main>
   <div class="add-client-form">
     <h1>Añadir Cliente</h1>
-    <form (ngSubmit)="addCliente(formCliente)">
+    <form #clienteForm="ngForm" (ngSubmit)="addCliente(formCliente)">
       <div class="form-row">
         <div class="form-group">
           <label for="nombre">Nombre</label>
@@ -34,7 +34,13 @@
             name="correo"
             [(ngModel)]="formCliente.correo"
             required
+            pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"
+            #correo="ngModel"
           />
+          <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="error">
+            <div *ngIf="correo.errors?.['required']">Correo es requerido.</div>
+            <div *ngIf="correo.errors?.['pattern']">Correo no es válido.</div>
+          </div>
         </div>
         <div class="form-group">
           <label for="celular">Número de Teléfono</label>
@@ -47,7 +53,7 @@
           />
         </div>
       </div>
-      <button type="submit" class="btnSubmit">Añadir</button>
+      <button type="submit" class="btnSubmit" [disabled]="clienteForm.invalid || correo.invalid">Añadir</button>
     </form>
   </div>
 </main>
