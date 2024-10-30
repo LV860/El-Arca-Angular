@@ -88,6 +88,11 @@ export class MascotasTableComponent implements OnInit {
     }
 
     addTratamiento(id: number) {
-      this.router.navigate(['mascotasTratamiento', id]);
+      this.mascotaService.findById(id).subscribe((mascota) => {
+        if (mascota.estado === 'En tratamiento') {
+          this.router.navigate(['mascotasTratamiento', id]);
+        }
+      })
+      
     }
 }
