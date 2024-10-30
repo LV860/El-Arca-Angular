@@ -8,7 +8,7 @@
             <label for="cedula">Cédula:</label>
             <input type="number" id="cedula" name="cedula" [(ngModel)]="cedula" required>
             <!---->
-            <button type="submit" class="btnBlue">Iniciar Sesión</button>
+            <button type="submit" class="btnBlue" id = "btnInicioCliente">Iniciar Sesión</button>
           </form>
           <a routerLink="/loginVeterinario"><h6>¿Iniciar sesión como veterinario?</h6></a>
           <div *ngIf="error">
