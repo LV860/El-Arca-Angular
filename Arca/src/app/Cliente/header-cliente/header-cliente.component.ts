@@ -20,11 +20,18 @@ export class HeaderClienteComponent {
   }
 
   ngOnInit(): void {
+    this.clienteService.clienteHome().subscribe(
+      (data) => {
+        this.cliente = data;
+      }
+    );
+    /*
     const clienteId = this.route.snapshot.params['id']; // Obtén el ID del cliente de la ruta
     this.clienteService.getClienteById(clienteId).subscribe(cliente => {
       this.cliente = cliente;
       this.id = this.cliente.id; // Ahora puedes acceder al ID
     });
+    */
   }
   perfil() {
     console.log("Id cliente: " + this.id);

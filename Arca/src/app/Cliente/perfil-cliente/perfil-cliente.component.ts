@@ -45,7 +45,7 @@ export class PerfilClienteComponent implements OnInit{
 
 
     /*
-    const cedula = Number(this.route.snapshot.paramMap.get('cedula'));
+    //const cedula = Number(this.route.snapshot.paramMap.get('cedula'));
     this.clienteService.findByCedula(cedula).subscribe(
       (data: Cliente) => {
         this.cliente = data; // Asigna la información del cliente
