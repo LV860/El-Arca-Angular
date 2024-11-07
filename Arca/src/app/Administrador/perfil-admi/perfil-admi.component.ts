@@ -23,6 +23,7 @@ export class PerfilAdmiComponent {
   ) {}
 
   ngOnInit(): void {
+    
     this.administradorService.adminHome().subscribe(
       (data) => {
         this.administrador = data;
