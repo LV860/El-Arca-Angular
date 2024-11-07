@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Veterianario } from '../interfaces-springboot/Veterinario';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
+import { User } from '../interfaces-springboot/User';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,16 @@ export class VeterinarioService {
 
   findById(id: number):Observable<Veterianario> {
     return this.http.get<Veterianario>('http://localhost:8090/veterinario/find/' + id)
+  }
+
+  veterinarioLogin(user: User): Observable<String>{
+    return this.http.post('http://localhost:8090/veterinario/login', user,{
+      responseType: 'text'
+    });
+  }
+
+  vetetinarioHome(): Observable<Veterianario>{
+    return this.http.get<Veterianario>('http://localhost:8090/veterinario/details');
   }
 
   findByCedula(cedula: String): Observable<Veterianario>{

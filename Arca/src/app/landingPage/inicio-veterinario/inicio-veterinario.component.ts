@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tratamiento } from 'src/app/interfaces-springboot/Tratamiento';
+import { User } from 'src/app/interfaces-springboot/User';
 import { Veterianario } from 'src/app/interfaces-springboot/Veterinario';
 import { VeterinarioService } from 'src/app/service/veterinario.service';
 
@@ -19,7 +20,7 @@ export class InicioVeterinarioComponent {
    //BD Lista
    veterinariosList: Veterianario[] = [];
 
-   veterinarioValido: Veterianario  = {
+   /*veterinarioValido: Veterianario  = {
     id: 0,
     cedula: '',
     contrasena: '',
@@ -28,6 +29,11 @@ export class InicioVeterinarioComponent {
     urlImagen: '',
     nombre: '',
     tratamientos: [] as Tratamiento[] 
+  };*/
+
+  veterinarioValido: User = {
+    cedula: '',
+    contrasena: ''
   };
 
 
@@ -41,6 +47,13 @@ export class InicioVeterinarioComponent {
   }
 
   iniciarSesion() {
+    this.veterinarioService.veterinarioLogin(this.veterinarioValido).subscribe(
+      (data) => {
+        localStorage.setItem('token', String(data));
+        this.router.navigate(['/veterinario/home']);
+      }
+     );
+    /*
     this.veterinarioService.findByCedula(this.cedula).subscribe(
       (veterinario) => {
         if (veterinario) {
@@ -64,6 +77,8 @@ export class InicioVeterinarioComponent {
         this.error = true; // Muestra un mensaje de error si la búsqueda falla
       }
     );
+    */
+   
   }
   
 
