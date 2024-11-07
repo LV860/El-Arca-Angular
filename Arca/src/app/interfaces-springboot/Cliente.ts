@@ -5,7 +5,7 @@ export interface Cliente{
     celular: string;
     nombre: string;
     estado: string;
-    cedula: number;
+    cedula: string;
     id: number;
     mascotas?: Mascota[];
 }
