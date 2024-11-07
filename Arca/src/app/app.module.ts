@@ -17,7 +17,7 @@ import { InicioVeterinarioComponent } from './landingPage/inicio-veterinario/ini
 import { MascotasDetailComponent } from './Veterinario/mascotas-detail/mascotas-detail.component';
 import { MascotasAddComponent } from './Veterinario/mascotas-add/mascotas-add.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ClientesTableComponent } from './Veterinario/clientes-table/clientes-table.component';
 import { ClientesAddComponent } from './Veterinario/clientes-add/clientes-add.component';
 import { ClientesEditComponent } from './Veterinario/clientes-edit/clientes-edit.component';
@@ -46,6 +46,7 @@ import { MainDashboardComponent } from './Administrador/Dashboard/main-dashboard
 import { CantidadesTotalesComponent } from './Administrador/Dashboard/cantidades-totales/cantidades-totales.component';
 import { VentasGananciasComponent } from './Administrador/Dashboard/ventas-ganancias/ventas-ganancias.component';
 import { MascotasHistorialComponent } from './Veterinario/mascotas-historial/mascotas-historial.component';
+import { AuthInterceptor } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,11 @@ import { MascotasHistorialComponent } from './Veterinario/mascotas-historial/mas
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

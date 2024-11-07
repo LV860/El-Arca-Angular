@@ -36,6 +36,15 @@ export class PerfilClienteComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+
+    this.clienteService.clienteHome().subscribe(
+      (data) => {
+        this.cliente = data;
+      }
+    );
+
+
+    /*
     const cedula = Number(this.route.snapshot.paramMap.get('cedula'));
     this.clienteService.findByCedula(cedula).subscribe(
       (data: Cliente) => {
@@ -45,6 +54,8 @@ export class PerfilClienteComponent implements OnInit{
         console.error('Error al obtener el cliente:', error);
       }
     );
+
+    */
   }
 
   mostrarTratamientos(mascotaId: number) {

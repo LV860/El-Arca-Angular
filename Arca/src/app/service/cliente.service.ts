@@ -3,6 +3,7 @@ import { Cliente } from '../interfaces-springboot/Cliente';
 import { Mascota } from '../interfaces-springboot/Mascota';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
+import { User } from '../interfaces-springboot/User';
 
 @Injectable({
   providedIn: 'root'
@@ -88,6 +89,17 @@ getClienteById(id: number): Observable<Cliente> {
       return throwError(error);
     })
   );
+}
+
+
+clienteLogin(user: User): Observable<String> {
+  return this.http.post(`http://localhost:8090/clientes/login`, user,{
+    responseType: 'text'
+  });
+}
+
+clienteHome(): Observable<Cliente> {
+  return this.http.get<Cliente>(`http://localhost:8090/clientes/details`);
 }
 /*
 // Método para obtener las mascotas de un cliente
