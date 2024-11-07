@@ -34,8 +34,8 @@ export class HeaderClienteComponent {
     */
   }
   perfil() {
-    console.log("Id cliente: " + this.id);
-    this.router.navigate(['/', this.id]); // Ajusta según tu lógica de navegación
+    //console.log("Id cliente: " + this.id);
+    this.router.navigate(['/cliente/home']); // Ajusta según tu lógica de navegación
   }
 
 }
