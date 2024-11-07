@@ -39,7 +39,7 @@ export class TableClientesComponent {
     if (this.filterBy !== 'todos') {
       filteredList = filteredList.filter(cliente => {
         if (this.filterBy === 'cedula') {
-          return cliente.cedula.toLowerCase() === this.searchQuery.toLowerCase();
+          return cliente.cedula.toString() === this.searchQuery;
         } else if (this.filterBy === 'nombre') {
           return cliente.nombre.toLowerCase() === this.searchQuery.toLowerCase();
         } else if (this.filterBy === 'correo') {
@@ -55,7 +55,7 @@ export class TableClientesComponent {
       });
     } else {
       filteredList = filteredList.filter(cliente => {
-        return cliente.cedula.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        return cliente.cedula.toString().includes(this.searchQuery) ||
                cliente.nombre.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
                cliente.correo.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
                cliente.celular.toLowerCase().includes(this.searchQuery.toLowerCase());

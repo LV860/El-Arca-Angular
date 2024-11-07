@@ -14,7 +14,7 @@ export class AddClientesComponent {
     celular: '',
     nombre: '',
     estado: '',
-    cedula: '',
+    cedula: 0,
     id: 0,
     mascotas: [] // Puedes dejarlo vacío o como undefined
   };

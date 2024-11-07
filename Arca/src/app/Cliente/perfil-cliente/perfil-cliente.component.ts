@@ -17,7 +17,7 @@ export class PerfilClienteComponent implements OnInit{
 
   cliente: Cliente = {
     id: 0,
-    cedula: '',
+    cedula: 0,
     nombre: '',
     correo: '',
     celular: '',
@@ -36,7 +36,7 @@ export class PerfilClienteComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    const cedula = String(this.route.snapshot.paramMap.get('cedula'));
+    const cedula = Number(this.route.snapshot.paramMap.get('cedula'));
     this.clienteService.findByCedula(cedula).subscribe(
       (data: Cliente) => {
         this.cliente = data; // Asigna la información del cliente

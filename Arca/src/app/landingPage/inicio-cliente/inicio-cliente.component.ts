@@ -11,13 +11,13 @@ import { ClienteService } from 'src/app/service/cliente.service';
 })
 export class InicioClienteComponent {
 
-  cedula!: string;  
+  cedula!: number;  
   error: boolean = false;
   clienteList: Cliente [] = [];
 
   clienteValido: Cliente = {
     id: 0,
-    cedula: '',
+    cedula: 0,
     correo: '',
     celular: '',
     nombre: '',
