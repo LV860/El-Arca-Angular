@@ -12,19 +12,24 @@ export class HeaderAdminComponent {
 
   constructor(private router: Router, private route: ActivatedRoute, private administradorService: AdministradorService) { }
 
+  admin!: Administrador;
   id!: number;
   logOut() {
     this.router.navigate(['/']);
   }
 
   ngOnInit(): void {
-    this.id = this.administradorService.getAdministradorPerfil().id;
+    this.administradorService.adminHome().subscribe(
+      (data) => {
+        this.admin = data;
+      }
+    )
   }
 
   perfil() {
-    const id = this.administradorService.getAdministradorPerfil().id;
-    console.log("Id veterinario: " +id);
-    this.router.navigate(['/', id]);
+    //const id = this.administradorService.getAdministradorPerfil().id;
+    //console.log("Id veterinario: " +id);
+    this.router.navigate(['/admin/home']);
   }
 
 }

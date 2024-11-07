@@ -6,10 +6,10 @@
         <form (ngSubmit)="iniciarSesion()">
             <label for="usuario">Usuario:</label>
             <input type="text" id="usuario" name="usuario" 
-            [(ngModel)]="usuario" required>
+            [(ngModel)]="adminValido.usuario" required>
             <label for="contra">Contraseña:</label>
             <input type="password" id="contra" name="contra" 
-            [(ngModel)]="contra" required>
+            [(ngModel)]="adminValido.contrasenia" required>
             
             <button type="submit" class="btnBlue">Iniciar Sesión</button>
         </form>

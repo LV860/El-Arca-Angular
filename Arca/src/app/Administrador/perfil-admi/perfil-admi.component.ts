@@ -23,10 +23,11 @@ export class PerfilAdmiComponent {
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.administradorService.findById(id).subscribe((vet) => {
-      this.administrador = vet;
-    })
+    this.administradorService.adminHome().subscribe(
+      (data) => {
+        this.administrador = data;
+      }
+    )
   }
 
 }

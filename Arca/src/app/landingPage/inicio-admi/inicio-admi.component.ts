@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Administrador } from 'src/app/interfaces-springboot/Administrador';
+import { User } from 'src/app/interfaces-springboot/User';
+import { UserAdmin } from 'src/app/interfaces-springboot/UserAdmin';
 import { AdministradorService } from 'src/app/service/administrador.service';
 
 @Component({
@@ -18,8 +20,7 @@ export class InicioAdmiComponent {
    //BD Lista
    adminList: Administrador[] = [];
 
-   adminValido: Administrador  = {
-    id: 0,
+   adminValido: UserAdmin  = {
     usuario: '',
     contrasenia: '',
     
@@ -37,32 +38,13 @@ export class InicioAdmiComponent {
 
   iniciarSesion() {
 
-    this.administradorService.findByUsuario(this.usuario).subscribe((admin) => {
-
-      console.log( "BD admin: " +admin.contrasenia);
-      this.adminValido = admin;
-
-      console.log( "adminValido usuario: " +this.adminValido.usuario);
-      console.log( "adminValido contra: " +this.adminValido.contrasenia);
-      
-      console.log( "Usuario inicio: " +this.usuario);
-      console.log( "Contra inicio: " +this.contra);
-  
-      // Verifica si el ID y la contraseña son válidos después de obtener la respuesta
-      if (this.adminValido.usuario === this.usuario && this.adminValido.contrasenia === this.contra) {
-        console.log( "Se valido el admin: " +this.adminValido.id);
-        this.administradorService.setAdministradorPerfil(this.adminValido);
-        console.log( "Se valido el admin: " +this.adminValido.id);
-        
-        this.router.navigate(['/perfilAdmin', this.adminValido.id]); // Redirigir a la página del veterinario si las credenciales son correctas
-      } else {
-        this.error = true; // Muestra el mensaje de error si las credenciales son incorrectas
+    this.administradorService.adminLogin(this.adminValido).subscribe(
+      (data) => {
+        localStorage.setItem('token', String(data));
+        this.router.navigate(['/admin/home']);
       }
-    }, (error) => {
-      console.error('Error al buscar veterinario:', error);
-      this.error = true; // Muestra un mensaje de error si la búsqueda falla
-    });
-  }
+    );
 
+  }
 
 }

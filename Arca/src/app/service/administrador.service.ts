@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Administrador } from '../interfaces-springboot/Administrador';
+import { UserAdmin } from '../interfaces-springboot/UserAdmin';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,16 @@ export class AdministradorService {
 
   findById(id: number):Observable<Administrador> {
     return this.http.get<Administrador>('http://localhost:8090/admin/find/' + id)
+  }
+
+  adminLogin(userAdmin: UserAdmin): Observable<String>{
+    return this.http.post('http://localhost:8090/admin/login', userAdmin,{
+      responseType: 'text'
+    });
+  }
+
+  adminHome(): Observable<Administrador>{
+    return this.http.get<Administrador>('http://localhost:8090/admin/details');
   }
 
 
