@@ -39,7 +39,12 @@ export class InicioClienteComponent {
         localStorage.setItem('token', String(data));
         this.router.navigate(['/cliente/home']);
     });
-  }  
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 
   
   

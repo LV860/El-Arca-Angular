@@ -16,8 +16,13 @@ export class HeaderVeterinarioComponent {
   veterinario!: Veterianario;
   id!: number;
   logOut() {
+    // Eliminar el token JWT del localStorage
+    localStorage.removeItem('token');
+
+    // Redirigir al login
     this.router.navigate(['/']);
-  }
+ }
+
 
   ngOnInit(): void {
     this.veterinarioService.vetetinarioHome().subscribe(

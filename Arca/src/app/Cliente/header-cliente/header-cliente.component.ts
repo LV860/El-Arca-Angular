@@ -16,7 +16,11 @@ export class HeaderClienteComponent {
   constructor(private router: Router, private route: ActivatedRoute, private clienteService: ClienteService) { }
 
   logOut() {
-    this.router.navigate(['/']);
+     // Eliminar el token JWT del localStorage
+     localStorage.removeItem('token');
+
+     // Redirigir al login
+     this.router.navigate(['/']);
   }
 
   ngOnInit(): void {
