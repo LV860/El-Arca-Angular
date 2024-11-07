@@ -55,7 +55,7 @@ const routes: Routes = [
   { path: 'perfilCliente/:cedula', component: PerfilClienteComponent },
   { path: 'cliente/home', component: PerfilClienteComponent },
   { path: 'veterinario/home', component: PerfilVeterinarioComponent },
-  { path: 'admin/home', component: InicioAdmiComponent },
+  { path: 'admin/home', component: PerfilAdmiComponent },
   { path: 'perfilAdmin/:id', component: PerfilAdmiComponent },
   { path: 'loginAdmin', component: InicioAdmiComponent },
   { path: 'mascotasAdmin', component: TableMascotasComponent },
