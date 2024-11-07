@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Administrador } from 'src/app/interfaces-springboot/Administrador';
+import { User } from 'src/app/interfaces-springboot/User';
 import { UserAdmin } from 'src/app/interfaces-springboot/UserAdmin';
 import { AdministradorService } from 'src/app/service/administrador.service';
 
@@ -21,7 +22,7 @@ export class InicioAdmiComponent {
 
    adminValido: UserAdmin  = {
     usuario: '',
-    contrasenia: '',
+    contrasena: '',
     
   };
 
