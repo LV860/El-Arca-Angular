@@ -35,7 +35,7 @@ constructor(public veterinarioService: VeterinarioService, private mascotaServic
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(id);
     this.mascotaService.findById(id).subscribe((mascota) => {
-      this.formTratamiento.veterinarioIdLong = this.veterinarioService.getVeterinarioPerfil().id;
+      this.formTratamiento.veterinarioIdLong = Number(localStorage.getItem('veterinarioActualId'));
       this.formTratamiento.mascotaIdLong = mascota.id;
     })
   }

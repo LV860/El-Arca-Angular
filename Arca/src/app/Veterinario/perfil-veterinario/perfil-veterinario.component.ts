@@ -31,6 +31,7 @@ export class PerfilVeterinarioComponent {
   this.veterinarioService.vetetinarioHome().subscribe(
     (data) => {
       this.veterinario = data
+      localStorage.setItem('veterinarioActualId', String(this.veterinario.id));
     }
   );
 
