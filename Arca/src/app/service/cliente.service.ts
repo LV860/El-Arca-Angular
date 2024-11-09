@@ -45,16 +45,13 @@ export class ClienteService {
     );
   }
 
-  updateCliente(cliente: Cliente): void {
-    this.http.put(`http://localhost:8090/clientes/update/${cliente.id}`, cliente)
-      .subscribe({
-        next: (response) => {
-          console.log('Cliente actualizado con éxito:', response);
-        },
-        error: (error) => {
-          console.error('Error al actualizar el cliente:', error);
-        }
-      });
+  updateCliente(cliente: Cliente): Observable<any> {
+    return this.http.put(`http://localhost:8090/clientes/update/${cliente.id}`, cliente).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error al actualizar cliente:', error);
+        return throwError(() => new Error(error.message));
+      })
+    );
   }
       
 

@@ -1,0 +1,77 @@
+<app-header-admin></app-header-admin>
+<main>
+    <div class="edit-client-form">
+      <h1>Añadir Tratamiento</h1>
+  
+      <form (ngSubmit)="addTratamiento(formTratamiento)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Precio:</label>
+            <input
+              type="number"
+              id="precio"
+              name="precio"
+              [(ngModel)]="formTratamiento.precio"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="id">Identificación Mascota:</label>
+            <input
+              type="text"
+              id="mascotaIdLong"
+              name="mascotaIdLong"
+              [(ngModel)]="formTratamiento.mascotaIdLong"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="raza">Identificación Veterinario:</label>
+            <input
+              type="text"
+              id="veterinarioIdLong"
+              name="veterinarioIdLong"
+              [(ngModel)]="formTratamiento.veterinarioIdLong"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="drogaIdLong">Id Droga::</label>
+            <input
+              type="number"
+              id="drogaIdLong"
+              name="drogaIdLong"
+              [(ngModel)]="formTratamiento.drogaIdLong"
+              required
+            />
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input
+              type="date"
+              id="fecha"
+              name="fecha"
+              [(ngModel)]="formTratamiento.fecha"
+              required
+            />
+          </div>
+        </div>
+  
+        <div class="form-row"></div>
+        <button type="submit" class="btnSubmit">Guardar Cambios</button>
+        <button 
+              type="button"
+              class="btnSubmit2"
+              (click)="historialMascota()">Historial Tratamiento
+                
+              </button>
+      </form>
+      
+    </div>
+  </main>
+  

@@ -55,6 +55,15 @@ export class VeterinarioService {
     return this.http.get<Veterianario>('http://localhost:8090/veterinario/findCedula/' + cedula)
   }
 
+  updateVeterinario(veterinario: Veterianario): Observable<any> {
+    return this.http.put(`http://localhost:8090/veterinario/update/${veterinario.id}`, veterinario).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error al actualizar veterinario:', error);
+        return throwError(() => new Error(error.message));
+      })
+    );
+  }
+
 
   addVeterinario(veterinario: Veterianario): Observable<Veterianario> {
     //console.log(veterinario.estado);
@@ -71,13 +80,6 @@ export class VeterinarioService {
     this.http.delete('http://localhost:8090/veterinario/delete/' + id).subscribe();
   }
 
-  updateVeterinario(veterinario: Veterianario): Observable<Veterianario> {
-    return this.http.post<Veterianario>(`http://localhost:8090/veterinario/update/${veterinario.id}`, veterinario).pipe(
-      catchError((error: HttpErrorResponse) => {
-        console.error('Error:', error);
-        return throwError(error);
-      })
-    );
-  }
+  
 
 }

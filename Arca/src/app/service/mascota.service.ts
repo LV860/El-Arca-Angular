@@ -63,28 +63,16 @@ getMascotasByClienteId(clienteId: number): Observable<Mascota[]> {
   }
 
 
-  updateMascota(mascota: Mascota): void {
-    this.http.put(`http://localhost:8090/mascota/update/${mascota.id}`, mascota)
-      .subscribe({
-        next: (response) => {
-          console.log('Mascota actualizada con éxito:', response);
-        },
+  
 
-        error: (error) => {
-          console.error('Error al actualizar la mascota:', error);
-        }
-      });
+  updateMascota(mascota: Mascota): Observable<any> {
+    return this.http.put(`http://localhost:8090/mascota/update/${mascota.id}`, mascota).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error al actualizar mascota:', error);
+        return throwError(() => new Error(error.message));
+      })
+    );
   }
-
-  /*
-  updateMascota(updatedMascota: Mascota) {
-    const index = this.mascotasList.findIndex(m => m.id === updatedMascota.id);
-    if (index !== -1) {
-      this.mascotasList[index] = updatedMascota;
-      this.mascotasSubject.next(this.mascotasList);
-    }
-  }
-*/
   private async generateUniqueId(): Promise<number> {
     const mascotasList = await this.findAll().toPromise();
     return mascotasList!.length + 1;

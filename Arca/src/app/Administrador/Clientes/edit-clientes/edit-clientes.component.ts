@@ -39,14 +39,12 @@ export class EditClientesComponent {
     }
 */
     guardarCambios(cliente: Cliente) {
-      this.clienteService.addCliente(cliente).subscribe(
+      this.clienteService.updateCliente(cliente).subscribe(
         (newCliente) => {
           this.router.navigate(['/clientesAdmin']); // Navigate back to the table after successful operation
-        },
-        (error) => {
-          console.error('Error:', error);
         }
       );
+
     }
 
 }

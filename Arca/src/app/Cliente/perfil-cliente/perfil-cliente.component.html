@@ -92,7 +92,7 @@
     </div>
   </div>
   <div class="contenedorBajo">
-    <ng-container *ngIf="tratamientosList.length > 0">
+    <ng-container *ngIf="tratamientosList.length > 0 && btnMostrarTratamientos">
       <app-tratamientos-table
         [mascotaId]="selectedMascotaId"
       ></app-tratamientos-table>

@@ -33,6 +33,8 @@ import { MascotasTratamientoComponent } from './Veterinario/mascotas-tratamiento
 import { TratamientosTableComponent } from './Cliente/tratamientos-table/tratamientos-table.component';
 import { MainDashboardComponent } from './Administrador/Dashboard/main-dashboard/main-dashboard.component';
 import { MascotasHistorialComponent } from './Veterinario/mascotas-historial/mascotas-historial.component';
+import { TratamientoMascotaComponent } from './Administrador/Mascotas/tratamiento-mascota/tratamiento-mascota.component';
+import { HistorialMascotaComponent } from './Administrador/Mascotas/historial-mascota/historial-mascota.component';
 
 
 const routes: Routes = [
@@ -67,6 +69,8 @@ const routes: Routes = [
   { path: 'veterinariosAdmin', component: TableVeterinariosComponent },
   { path: 'veterinariosAddAdmin', component: AddVeterinariosComponent },
   { path: 'veterinariosDetailAdmin/:id', component: EditVeterinariosComponent },
+  { path: 'mascotasTratamientoAdmin/:id', component: TratamientoMascotaComponent },
+  { path: 'mascotaHistorialAdmin/:id', component: HistorialMascotaComponent },
   { path: 'mascotasAddTratamiento/:id', component: EditVeterinariosComponent },
   { path: 'mascotasTratamiento/:id', component: MascotasTratamientoComponent },
   { path: 'dashboard', component: MainDashboardComponent },

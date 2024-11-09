@@ -18,6 +18,7 @@ export class HeaderVeterinarioComponent {
   logOut() {
     // Eliminar el token JWT del localStorage
     localStorage.removeItem('token');
+    localStorage.removeItem('veterinarioActualId');
 
     // Redirigir al login
     this.router.navigate(['/']);

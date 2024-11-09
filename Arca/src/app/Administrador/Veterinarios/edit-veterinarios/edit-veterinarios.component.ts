@@ -45,16 +45,13 @@ export class EditVeterinariosComponent {
     }
 */
     guardarCambios(veterinario: Veterianario) {
-      this.veterinarioService.addVeterinario(veterinario).subscribe(
+
+      this.veterinarioService.updateVeterinario(veterinario).subscribe(
         (newVeterinario) => {
-          console.log( "Nombre: " +veterinario.nombre);
-          console.log( "Estado: " +veterinario.estado);
           this.router.navigate(['/veterinariosAdmin']); // Navigate back to the table after successful operation
-        },
-        (error) => {
-          console.error('Error:', error);
         }
       );
+      
     }
 
 }

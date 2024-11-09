@@ -16,7 +16,7 @@ export class AdministradorService {
   static administradorPerfil: Administrador = {
     id: 0,
     usuario: '',
-    contrasenia: '',
+    contrasena: '',
     
   }
 

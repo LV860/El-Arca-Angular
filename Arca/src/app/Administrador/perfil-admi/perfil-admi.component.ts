@@ -13,9 +13,10 @@ export class PerfilAdmiComponent {
   administrador: Administrador = {
     id: 0,
     usuario: '',
-    contrasenia: '',
+    contrasena: '',
     
   };
+
 
   constructor(
     private administradorService: AdministradorService,
@@ -27,7 +28,12 @@ export class PerfilAdmiComponent {
     this.administradorService.adminHome().subscribe(
       (data) => {
         this.administrador = data;
+        console.log(this.administrador.usuario);
+      },
+      error => {
+        console.log("Error al obtener el administrador:", error);
       }
+
     )
   }
 

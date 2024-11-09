@@ -50,14 +50,13 @@ export class EditMascotasComponent {
   }
 */
   guardarCambios(mascota: Mascota) {
-    this.mascotaService.addMascota(mascota).subscribe(
+
+    this.mascotaService.updateMascota(mascota).subscribe(
       (newMascota) => {
         this.router.navigate(['/mascotasAdmin']); // Navigate back to the table after successful operation
-      },
-      (error) => {
-        console.error('Error:', error);
       }
     );
+    
   }
 
 }

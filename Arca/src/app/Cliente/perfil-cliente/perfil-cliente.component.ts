@@ -29,6 +29,8 @@ export class PerfilClienteComponent implements OnInit{
   //BD Lista
   tratamientosList: Tratamiento[] = [];
 
+  btnMostrarTratamientos: boolean = false;
+
   constructor(
     private tratamientoService : TratamientoService,
     private clienteService: ClienteService,
@@ -59,6 +61,12 @@ export class PerfilClienteComponent implements OnInit{
   }
 
   mostrarTratamientos(mascotaId: number) {
+
+    if (this.btnMostrarTratamientos == true){
+      this.btnMostrarTratamientos = false;
+    } else {
+      this.btnMostrarTratamientos = true;
+    }
     this.selectedMascotaId = mascotaId;
     this.tratamientoService.getTratamientosByMascotaId(mascotaId).subscribe((tratamientos) => {
       this.tratamientosList = tratamientos;

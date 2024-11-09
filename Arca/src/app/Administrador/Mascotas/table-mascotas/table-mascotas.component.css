@@ -1,121 +1,121 @@
 table img {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  h3 {
-    font-size: 1.17em;
-  }
-  
-  #formularioFiltro {
-    padding-bottom: 25px;
-  }
-  
-  .btn-primary {
-    background-color: #379ae6ff;
-    border-color: #379ae6ff;
-  }
-  
-  .title-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    margin: 20px;
-  }
-  
-  .btnYellow {
-    border-radius: 26px !important;
-    border: none;
-  }
-  
-  .btnAzul {
-    background-color: #379ae6ff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 26px;
-    border: none;
-    cursor: pointer;
-    font-family: "Manrope", sans-serif;
-  }
-  
-  .btnVerde {
-    background-color: #1dd75b;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 26px;
-    border: none;
-    cursor: pointer;
-    font-family: "Manrope", sans-serif;
-  }
-  
-  .btnRojo {
-    background-color: #d13160;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 26px;
-    border: none;
-    cursor: pointer;
-    font-family: "Manrope", sans-serif;
-  }
-  .client-table {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-  }
-  
-  .client-table table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .client-table th,
-  .client-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .client-table th {
-    background-color: #f5f5f5;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  th,
-  td {
-    text-align: center;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    vertical-align: baseline;
-  }
-  
-  .editButtonContainer {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100px; /* Example height, adjust as needed */
-    width: 100%; /* Full width */
-  }
-  
-  
-  .tagEstadoMascotaTratamiento {
-    color: #117b34ff;
-    padding: 0.2em 0.6em;
-    border-radius: 10rem;
-    background-color: #abf8c4;
-    border: none; /* Remove default button border */
-  }
-  
-  .tagEstadoMascotaInactiva {
-    color: #896901;
-    padding: 0.2em 0.6em;
-    border-radius: 10rem;
-    background-color: #fffae8;
-  }
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+#formularioFiltro {
+  padding-bottom: 25px;
+}
+
+.btn-primary {
+  background-color: #379ae6ff;
+  border-color: #379ae6ff;
+}
+
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.btnYellow {
+  border-radius: 26px !important;
+  border: none;
+}
+
+.btnAzul {
+  background-color: #379ae6ff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+.btnVerde {
+  background-color: #1dd75b;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+.btnRojo {
+  background-color: #d13160;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 26px;
+  border: none;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+.client-table {
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+
+.client-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.client-table th,
+.client-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.client-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  text-align: center;
+}
+
+th,
+td {
+  text-align: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  vertical-align: baseline;
+}
+
+.editButtonContainer {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100px; /* Example height, adjust as needed */
+  width: 100%; /* Full width */
+}
+
+
+.tagEstadoMascotaTratamiento {
+  color: #117b34ff;
+  padding: 0.2em 0.6em;
+  border-radius: 10rem;
+  background-color: #abf8c4;
+  border: none; /* Remove default button border */
+}
+
+.tagEstadoMascotaInactiva {
+  color: #896901;
+  padding: 0.2em 0.6em;
+  border-radius: 10rem;
+  background-color: #fffae8;
+}

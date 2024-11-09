@@ -3,7 +3,7 @@
   <section class="title-bar">
     <h1>Información Mascotas</h1>
     <div class="buttons-group">
-      <a routerLink="/mascotasAddAdmin">
+      <a routerLink="/mascotasAdd">
         <button class="btnAzul">Añadir Mascota</button>
       </a>
       <!-- Los botones para editar y eliminar clientes se pueden gestionar aquí -->
@@ -91,6 +91,12 @@
               (click)="eliminarMascota(mascota)"
             >
               Eliminar
+            </button>
+            <button 
+            type="button"
+            class="btn btn-secondary"
+            (click)="addTratamiento(mascota.id)">Tratamiento
+              
             </button>
           </td>
         </tr>

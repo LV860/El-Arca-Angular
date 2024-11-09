@@ -47,6 +47,8 @@ import { CantidadesTotalesComponent } from './Administrador/Dashboard/cantidades
 import { VentasGananciasComponent } from './Administrador/Dashboard/ventas-ganancias/ventas-ganancias.component';
 import { MascotasHistorialComponent } from './Veterinario/mascotas-historial/mascotas-historial.component';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { TratamientoMascotaComponent } from './Administrador/Mascotas/tratamiento-mascota/tratamiento-mascota.component';
+import { HistorialMascotaComponent } from './Administrador/Mascotas/historial-mascota/historial-mascota.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +92,9 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     MainDashboardComponent,
     CantidadesTotalesComponent,
     VentasGananciasComponent,
-    MascotasHistorialComponent
+    MascotasHistorialComponent,
+    TratamientoMascotaComponent,
+    HistorialMascotaComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
   ],

@@ -84,4 +84,13 @@ export class TableMascotasComponent {
       this.mascotasList.splice(index, 1);
       this.mascotaService.deleteById(mascota.id);
     }
+
+    addTratamiento(id: number) {
+      this.mascotaService.findById(id).subscribe((mascota) => {
+        if (mascota.estado === 'En tratamiento') {
+          this.router.navigate(['mascotasTratamientoAdmin', id]);
+        }
+      })
+      
+    }
 }
