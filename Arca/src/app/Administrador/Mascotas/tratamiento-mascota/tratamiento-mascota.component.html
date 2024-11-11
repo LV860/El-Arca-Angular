@@ -30,15 +30,15 @@
           <div class="form-group">
             <label for="raza">Identificación Veterinario:</label>
             <input
-              type="text"
+              type="number"
               id="veterinarioIdLong"
               name="veterinarioIdLong"
               [(ngModel)]="formTratamiento.veterinarioIdLong"
-              readonly
+              required
             />
           </div>
           <div class="form-group">
-            <label for="drogaIdLong">Id Droga::</label>
+            <label for="drogaIdLong">Id Droga:</label>
             <input
               type="number"
               id="drogaIdLong"

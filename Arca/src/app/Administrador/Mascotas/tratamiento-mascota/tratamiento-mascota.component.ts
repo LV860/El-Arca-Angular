@@ -33,7 +33,7 @@ export class TratamientoMascotaComponent {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(id);
     this.mascotaService.findById(id).subscribe((mascota) => {
-      this.formTratamiento.veterinarioIdLong = Number(localStorage.getItem('veterinarioActualId'));
+      //this.formTratamiento.veterinarioIdLong = Number(localStorage.getItem('veterinarioActualId'));
       this.formTratamiento.mascotaIdLong = mascota.id;
     })
   }
@@ -52,7 +52,7 @@ export class TratamientoMascotaComponent {
 
   this.tratamientoService.addTratamiento(tratamiento).subscribe(
     (newTratamiento) => {
-      this.router.navigate(['/mascotas']); // Navigate back to the table after successful operation
+      this.router.navigate(['/mascotasAdmin']); // Navigate back to the table after successful operation
     },
     (error) => {
       console.error('Error:', error);
