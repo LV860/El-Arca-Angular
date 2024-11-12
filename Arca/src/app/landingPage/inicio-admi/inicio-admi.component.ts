@@ -42,6 +42,8 @@ export class InicioAdmiComponent {
       (data) => {
         localStorage.setItem('token', String(data));
         this.router.navigate(['/admin/home']);
+      }, error => {
+        this.error = true;
       }
     );
 

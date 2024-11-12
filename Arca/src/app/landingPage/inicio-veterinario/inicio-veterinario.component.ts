@@ -51,6 +51,8 @@ export class InicioVeterinarioComponent {
       (data) => {
         localStorage.setItem('token', String(data));
         this.router.navigate(['/veterinario/home']);
+      }, error => {
+        this.error = true;
       }
      );
    

@@ -38,6 +38,8 @@ export class InicioClienteComponent {
       (data) => {
         localStorage.setItem('token', String(data));
         this.router.navigate(['/cliente/home']);
+    }, error => {
+      this.error = true;
     });
   }
 
