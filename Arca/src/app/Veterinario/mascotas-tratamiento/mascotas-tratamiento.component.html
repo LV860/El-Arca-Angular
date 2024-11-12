@@ -16,36 +16,39 @@
           />
         </div>
         <div class="form-group">
-          <label for="id">Identificación Mascota:</label>
+          <label for="id">Nombre Mascota:</label>
           <input
             type="text"
             id="mascotaIdLong"
             name="mascotaIdLong"
-            [(ngModel)]="formTratamiento.mascotaIdLong"
+            [(ngModel)]="mascotaNombre"
             readonly
           />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="raza">Identificación Veterinario:</label>
+          <label for="raza">Nombre Veterinario:</label>
           <input
             type="text"
             id="veterinarioIdLong"
             name="veterinarioIdLong"
-            [(ngModel)]="formTratamiento.veterinarioIdLong"
+            [(ngModel)]="veterinarioNombre"
             readonly
           />
         </div>
         <div class="form-group">
           <label for="drogaIdLong">Id Droga:</label>
-          <input
-            type="number"
+          <select
             id="drogaIdLong"
             name="drogaIdLong"
             [(ngModel)]="formTratamiento.drogaIdLong"
             required
-          />
+          >
+            <option *ngFor="let droga of drogas" [value]="droga.id">
+              {{ droga.nombre }}
+            </option>
+          </select>
         </div>
       </div>
 
@@ -64,13 +67,9 @@
 
       <div class="form-row"></div>
       <button type="submit" class="btnSubmit">Guardar Cambios</button>
-      <button 
-            type="button"
-            class="btnSubmit2"
-            (click)="historialMascota()">Historial Tratamiento
-              
-            </button>
+      <button type="button" class="btnSubmit2" (click)="historialMascota()">
+        Historial Tratamiento
+      </button>
     </form>
-    
   </div>
 </main>
